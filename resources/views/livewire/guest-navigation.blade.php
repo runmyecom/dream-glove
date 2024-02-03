@@ -12,7 +12,7 @@
             <span>|</span>
             @if (Route::has('login'))
                 @auth
-                    <a class="hover:text-gray-900" href="{{ url('/dashboard') }}">My account</a>
+                    <a class="hover:text-gray-900" href="{{ url('/dashboard') }}">Dashboard</a>
                 @else
                     <a class="hover:text-gray-900" href="{{ route('login') }}">Sign In</a>
                     @if (Route::has('register'))
@@ -31,11 +31,11 @@
             <img src="/logo-b.png" alt="logo" class="h-9 md:h-12">
         </a>
         <div class='hidden md:flex items-center gap-2'>
-            <a href='#' class='text-zinc-800 rounded px-3 py-1 text-sm'>Customize</a>
-            <a href='#' class='text-zinc-800 rounded px-3 py-1 text-sm'>Baseball</a>
-            <a href='#' class='text-zinc-800 rounded px-3 py-1 text-sm'>Apparel</a>
-            <a href='#' class='text-zinc-800 rounded px-3 py-1 text-sm'>Clearance</a>
-            <a href='#' class='text-zinc-800 rounded px-3 py-1 text-sm'>Accessories</a>
+            <a href='' class='text-zinc-800 rounded px-3 py-1 text-sm'>Customize</a>
+            <a href='{{ route('item-by-category') }}' class='text-zinc-800 rounded px-3 py-1 text-sm'>Baseball</a>
+            <a href='{{ route('item-by-category') }}' class='text-zinc-800 rounded px-3 py-1 text-sm'>Apparel</a>
+            <a href='{{ route('item-by-category') }}' class='text-zinc-800 rounded px-3 py-1 text-sm'>Clearance</a>
+            <a href='{{ route('item-by-category') }}' class='text-zinc-800 rounded px-3 py-1 text-sm'>Accessories</a>
         </div>
         <div class="hidden md:flex items-center gap-4">
             <div class="search hidden md:flex items-center rounded-xl border border-zinc-800 overflow-hidden">
@@ -44,12 +44,12 @@
             </span>
             <input type="text" placeholder="Search" class="bg-transparent py-2 focus:outline-none outline-none border-0">
             </div>
-            <button>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-1.45-1.3q-2.525-2.275-4.175-3.925T3.75 12.812Q2.775 11.5 2.388 10.4T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.3 0 2.475.55T12 4.75q.85-1 2.025-1.55t2.475-.55q2.35 0 3.925 1.575T22 8.15q0 1.15-.387 2.25t-1.363 2.412q-.975 1.313-2.625 2.963T13.45 19.7zm0-2.7q2.4-2.15 3.95-3.687t2.45-2.675q.9-1.138 1.25-2.026T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2.175.662T12.95 7h-1.9q-.375-1.025-1.375-1.687T7.5 4.65q-1.5 0-2.5 1t-1 2.5q0 .875.35 1.763t1.25 2.025q.9 1.137 2.45 2.675T12 18.3m0-6.825"/></svg>
-            </button>
-            <button>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" viewBox="0 0 256 256"><path fill="currentColor" d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"/></svg>
-            </button>
+            <a href="{{ route('wish-list') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-1.45-1.3q-2.525-2.275-4.175-3.925T3.75 12.812Q2.775 11.5 2.388 10.4T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.3 0 2.475.55T12 4.75q.85-1 2.025-1.55t2.475-.55q2.35 0 3.925 1.575T22 8.15q0 1.15-.387 2.25t-1.363 2.412q-.975 1.313-2.625 2.963T13.45 19.7zm0-2.7q2.4-2.15 3.95-3.687t2.45-2.675q.9-1.138 1.25-2.026T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2.175.662T12.95 7h-1.9q-.375-1.025-1.375-1.687T7.5 4.65q-1.5 0-2.5 1t-1 2.5q0 .875.35 1.763t1.25 2.025q.9 1.137 2.45 2.675T12 18.3m0-6.825"/></svg>
+            </a>
+            <a href="{{ route('cart') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" viewBox="0 0 256 256"><path fill="currentColor" d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"/></svg>
+            </a>
         </div>
         <button class="block md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75M2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8m6 4.25a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>

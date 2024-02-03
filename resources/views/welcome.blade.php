@@ -25,25 +25,42 @@
             </div>
         </div>
 
+        {{-- Our Category --}}
         <section class="md:p-12 p-6">
             <h2 class="font-bold text-[3em] text-center">Our Top Category</h2>
             <p class="text-center mb-12">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut ducimus tempore illo <br/> dolorem, exercitationem, sapiente eaque.</p>
             <div class="flex flex-col md:flex-row gap-5 md:h-screen">
                 <div class="md:w-[40%] w-full">
-                    <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full">
+                    <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full relative group">
                         <img src="/images/image_1.jpeg" class="md:h-full h-[40vh] w-full object-cover">
+                        <div class="absolute inset-0 bg-black/75 flex items-center justify-center flex-col cursor-pointer transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                            <h3 class="text-white text-[3.5em] font-bold">Baseball</h3>
+                            <button class="bg-gray-50 text-sm rounded px-3 py-1">View all</button>
+                        </div>
                     </figure>
                 </div>
                 <div class="md:w-[60%] w-full flex flex-col gap-5">
-                    <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-[50%]">
+                    <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-[50%] relative group">
                         <img src="/images/image_2.jpeg" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-black/75 flex items-center justify-center flex-col cursor-pointer transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                            <h3 class="text-white text-[3em] font-bold">Apparel</h3>
+                            <button class="bg-gray-50 text-sm rounded px-3 py-1">View all</button>
+                        </div>
                     </figure>
                     <div class="grid grid-cols-2 gap-5 h-[50%]">
-                        <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full">
+                        <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full relative group">
                             <img src="/images/image_3.jpeg" class="h-full w-full object-cover">
+                            <div class="absolute inset-0 bg-black/75 flex items-center justify-center flex-col cursor-pointer transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                                <h3 class="text-white text-[2em] font-bold">Clearance</h3>
+                                <button class="bg-gray-50 text-sm rounded px-3 py-1">View all</button>
+                            </div>
                         </figure>
-                        <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full">
+                        <figure class="rounded-2xl overflow-hidden w-full shadow-lg h-full relative group">
                             <img src="/images/image_4.jpeg" class="h-full w-full object-cover">
+                            <div class="absolute inset-0 bg-black/75 flex items-center justify-center flex-col cursor-pointer transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                                <h3 class="text-white text-[2em] font-bold">Accessories</h3>
+                                <button class="bg-gray-50 text-sm rounded px-3 py-1">View all</button>
+                            </div>
                         </figure>
                     </div>
                 </div>

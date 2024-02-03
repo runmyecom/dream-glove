@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Client;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
 #[Layout('layouts.app')]
-class Customize extends Component
+class ItemByCategory extends Component
 {
     public function render()
     {
-        return view('livewire.customize');
+        return view('livewire.client.item-by-category');
     }
 }

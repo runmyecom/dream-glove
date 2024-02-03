@@ -1,6 +1,10 @@
 <?php
 
+use App\Livewire\Customize;
+use App\Livewire\Client\Cart;
+use App\Livewire\Client\WishList;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Client\ItemByCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +29,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('customize', Customize::class)->name('customize');
+    Route::get('items-by-category', ItemByCategory::class)->name('item-by-category');
+
+    Route::get('cart', Cart::class)->name('cart');
+    Route::get('wish-list', WishList::class)->name('wish-list');
+
 });

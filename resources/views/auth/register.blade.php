@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="flex w-full h-screen bg-white">
         <section class="w-full">
-            <img src="https://images.unsplash.com/photo-1590502160462-58b41354f588?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="login" class="object-cover h-full w-full">
+            <img src="/images/login.jpeg" alt="login" class="object-cover h-full w-full">
         </section>
         <section class="w-full bg-white h-full flex items-center justify-center">
             <div class="w-[30vw]">
