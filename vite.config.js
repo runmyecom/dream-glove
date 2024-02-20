@@ -11,4 +11,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+          external: [
+            "toastify-js/src/toastify.css"
+          ]
+        }
+      }
 });
