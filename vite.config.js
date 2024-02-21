@@ -14,7 +14,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
           external: [
-            "toastify-js/src/toastify.css"
+            "toastify-js/src/toastify.css",
+            "toastify-js"
           ]
         }
       }
