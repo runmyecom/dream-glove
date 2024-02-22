@@ -28,7 +28,7 @@
                 </div>
                 <ul class="mt-5">
                     <li class="px-3">
-                        <x-side-link href="/">
+                        <x-side-link href="#">
                             <x-icons.order class="w-5 h-5" />
                             <span class="text-sm">Orders</span>
                         </x-side-link>
@@ -56,10 +56,21 @@
                         </x-side-link>
                     </li>
                     <li class="px-3">
-                        <x-side-link href="/" :active="request()->routeIs('category.index')">
+                        <x-side-link href="#" :active="request()->routeIs('category.index')">
                             <x-icons.setting class="w-5 h-5" />
                             <span class="text-sm">Settings</span>
                         </x-side-link>
+                    </li>
+
+                    <hr class="my-2"/>
+
+                    <li class="px-3">
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                            <x-side-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                                <button class="text-xs w-full">{{ __('LOG OUT') }}</button>
+                            </x-side-link>
+                        </form>
                     </li>
                 </ul>
             </aside>

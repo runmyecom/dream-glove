@@ -104,11 +104,11 @@
                                 x-transition:enter-start="transform opacity-0 scale-95">
                                 <ul
                                     class="[&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]">
-                                    <li>Dream Gloves</li>
-                                    <li>Dream Belt</li>
-                                    <li>Dream Batting Gloves</li>
-                                    <li>Dream Elbow Guard</li>
-                                    <li>Dream Leg Guard</li>
+                                    <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Gloves</button></a></li>
+                                    <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Belt</button></a></li>
+                                    <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Batting Gloves</button></a></li>
+                                    <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Elbow Guard</button></a></li>
+                                    <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Leg Guard</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -139,8 +139,8 @@
                                     <div class="bg-white shadow rounded-md max-w-[180px] w-full p-3 absolute -right-[185px] -bottom-4 [&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]"
                                         x-show="battingGloves" x-transition:enter="transition ease-out duration-100"
                                         x-transition:enter-start="transform opacity-0 scale-95">
-                                        <li>Adult</li>
-                                        <li>Youth</li>
+                                        <li><a href="{{ route('baseball-batting-gloves-adult') }}"><button class="w-full text-left">Adult</button></a></li>
+                                        <li><a href="{{ route('baseball-batting-gloves-youth') }}"><button class="w-full text-left">Youth</button></a></li>
                                     </div>
 
                                     <li class="flex items-center justify-between"
@@ -163,8 +163,8 @@
                                             <div class="bg-white shadow rounded-md max-w-[180px] w-full p-3 absolute -right-[185px] -bottom-4 [&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]"
                                                 x-show="infieldChild" x-transition:enter="transition ease-out duration-100"
                                                 x-transition:enter-start="transform opacity-0 scale-95">
-                                                <li>Classic</li>
-                                                <li>Premier</li>
+                                                <li><a href="{{ route('baseball-fielding-gloves-infield-classic') }}"><button class="w-full text-left">Classic</button></a></li>
+                                                <li><a href="{{ route('baseball-fielding-gloves-infield-premier') }}"><button class="w-full text-left">Premier</button></a></li>
                                             </div>
 
                                         <li class="flex items-center justify-between"
@@ -177,12 +177,12 @@
                                             <div class="bg-white shadow rounded-md max-w-[180px] w-full p-3 absolute -right-[185px] -bottom-4 [&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]"
                                                 x-show="outfieldChild" x-transition:enter="transition ease-out duration-100"
                                                 x-transition:enter-start="transform opacity-0 scale-95">
-                                                <li>Classic</li>
-                                                <li>Premier</li>
+                                                <li><a href="{{ route('baseball-fielding-gloves-outfield-classic') }}"><button class="w-full text-left">Classic</button></a></li>
+                                                <li><a href="{{ route('baseball-fielding-gloves-outfield-premier') }}"><button class="w-full text-left">Premier</button></a></li>
                                             </div>
                                     </div>
 
-                                    <li><a href="{{ route('product_by_category', 'guard') }}">Guards</a></li>
+                                    <li><a href="{{ route('baseball-guard') }}"><button class="w-full text-left">Guards</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -203,15 +203,15 @@
                                 x-transition:enter-start="transform opacity-0 scale-95">
                                 <ul
                                     class="[&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]">
-                                    <li>Belts</li>
-                                    <li>Clothing</li>
+                                    <li><a href="{{ route('apparel-belts') }}"><button class="w-full text-left">Belts</button></a></li>
+                                    <li><a href="{{ route('apparel-clothing') }}"><button class="w-full text-left">Clothing</button></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <a href="{{ route('customize') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'>Clearance</a>
-                    <a href="{{ route('customize') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'>Accessories</a>
+                    <a href="{{ route('clearance') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'><button class="w-full text-left">Clearance</button></a>
+                    <a href="{{ route('accessories') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'><button class="w-full text-left">Accessories</button></a>
                 </div>
             </div>
 

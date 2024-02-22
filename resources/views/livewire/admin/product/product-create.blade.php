@@ -22,19 +22,19 @@
         <!-- Product name -->
         <div class="col-span-12 mb-6">
             <x-label for="form.category_id" value="Select Category" />
-            <select x-model="form.category_id" class="w-full rounded-lg border-gray-300">
+            <select x-model="form.category_name" class="w-full rounded-lg border-gray-300">
                 <option disabled value="">Select Category</option>
-                <option value="16">Clearance</option>
-                <option value="17">Accessories</option>
-                <option value="45">Apparel > Belts</option>
-                <option value="14">Apparel > Clothing</option>
-                <option value="2">Baseball > Guard</option>
-                <option value="3">Baseball > Batting Gloves > Adult</option>
-                <option value="4">Baseball > Batting Gloves > Youth</option>
-                <option value="8">Baseball > Fielding GLoves > Infield > Classic</option>
-                <option value="9">Baseball > Fielding GLoves > Infield > Premier</option>
-                <option value="10">Baseball > Fielding GLoves > Outfield > Classic</option>
-                <option value="11">Baseball > Fielding GLoves > Outfield > Premier</option>
+                <option value="clearance">Clearance</option>
+                <option value="accessories">Accessories</option>
+                <option value="apparel-belts">Apparel > Belts</option>
+                <option value="apparel-clothing">Apparel > Clothing</option>
+                <option value="baseball-guard">Baseball > Guard</option>
+                <option value="baseball-batting-gloves-adult">Baseball > Batting Gloves > Adult</option>
+                <option value="baseball-batting-gloves-youth">Baseball > Batting Gloves > Youth</option>
+                <option value="baseball-fielding-gloves-infield-classic">Baseball > Fielding GLoves > Infield > Classic</option>
+                <option value="baseball-fielding-gloves-infield-premier">Baseball > Fielding GLoves > Infield > Premier</option>
+                <option value="baseball-fielding-gloves-outfield-classic">Baseball > Fielding GLoves > Outfield > Classic</option>
+                <option value="baseball-fielding-gloves-outfield-premier">Baseball > Fielding GLoves > Outfield > Premier</option>
             </select>
         </div>
 
