@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StripePaymentController;
 use App\Livewire\Client\Cart;
 use App\Livewire\Client\Product;
 use App\Livewire\Client\Checkout;
@@ -73,9 +74,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/thank-you', Thankyou::class)->name('thank-you');
 
     // Stripe
-    Route::post('stripe', [StripeController::class, 'stripe'])->name('stripe');
-    Route::get('success', [StripeController::class, 'success'])->name('success');
-    Route::get('cancel', [StripeController::class, 'cancel'])->name('cancel');
+    // Route::post('stripe', [StripeController::class, 'stripe'])->name('stripe');
+    // Route::get('success', [StripeController::class, 'success'])->name('success');
+    // Route::get('cancel', [StripeController::class, 'cancel'])->name('cancel');
+
+    Route::controller(StripePaymentController::class)->group(function(){
+        Route::get('stripe','stripe')->name('stripe.index');
+        Route::get('stripe/checkout','stripeCheckout')->name('stripe.checkout');
+        Route::get('stripe/checkout/success','stripeCheckoutSuccess')->name('stripe.checkout.success');
+    });
+
 });
 
 

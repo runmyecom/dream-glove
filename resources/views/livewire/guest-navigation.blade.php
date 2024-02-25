@@ -109,6 +109,7 @@
                                     <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Batting Gloves</button></a></li>
                                     <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Elbow Guard</button></a></li>
                                     <li><a href="{{route('customize')}}"><button class="w-full text-left">Dream Leg Guard</button></a></li>
+                                    <li><a href="{{route('stripe.index')}}"><button class="w-full text-left">Dream Leg Guard</button></a></li>
                                 </ul>
                             </div>
                         </div>
