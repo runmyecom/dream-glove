@@ -26,8 +26,8 @@
         </div>
 
         <div class="w-full bg-white border-t h-full px-5 py-10 text-gray-800">
-            <div class="px-3 max-w-7xl mx-auto grid grid-cols-2 gap-9">
-                <section class="w-full">
+            <div class="px-3 max-w-7xl mx-auto  sm:flex">
+                <section class="w-full mr-2 mb-5">
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 p-3 text-gray-800 font-light mb-6">
                         <div class="w-full flex mb-3 items-center">
                             <div class="w-40"><span class="text-gray-600 font-semibold">Name</span></div>
@@ -74,7 +74,7 @@
                     </div>
                 </section>
 
-                <section class="w-full">
+                <section class="w-full ml-2 ">
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
                         <div class="w-full p-3 border-b border-gray-200">
                             <div class="mb-5">

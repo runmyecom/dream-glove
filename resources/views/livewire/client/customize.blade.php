@@ -1,6 +1,6 @@
 <div class="bg-white w-full h-full">
     <div class="flex flex-col md:flex-row gap-12">
-      <div class="canvas-wraper w-full md:h-[82vh] h-[40vh]">
+      <div class="canvas-wraper w-full md:h-[82vh] h-[100vh]">
         <div class="canvas-area">
             <div id="container"></div>
         </div>

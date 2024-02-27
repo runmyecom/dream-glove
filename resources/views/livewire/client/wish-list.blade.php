@@ -17,7 +17,7 @@
         <section class="p-6 md:p-12">
             <h2 class="font-bold md:text-[3em] text-[2.5em] text-center">My Wishlist</h2>
             <p class="text-center mb-12">Experience sophistication with every piece - where elegance meets functionality in a <br/> perfect blend of style and practicality.</p>
-            <div class="grid md:grid-cols-4 gap-5">
+            <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-5">
                 <div class="card">
                     <div class="image bg-gray-100 p-5 rounded-xl overflow-hidden shadow md:h-[40vh] h-[30vh] flex items-center justify-center relative group cursor-pointer">
                         <img src="/images/pro_1.png" alt="" class="group-hover:scale-125 transition duration-700 ease-in-out">

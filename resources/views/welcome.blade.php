@@ -128,7 +128,7 @@
         </section>
 
         <!-- Subscribe -->
-        <section class="p-6 md:p-12">
+        <section class="p-6 md:p-12 ">
             <div class="bg-zinc-200 rounded-xl w-full h-full grid md:grid-cols-3 md:gap-8 gap-4 items-center justify-between px-6 md:px-12">
                 <figure class="flex items-center justify-center">
                     <img src="/images/pro_3.png" alt="" class="h-[30vh] md:h-full">
@@ -139,7 +139,7 @@
                 </div>
                 <div class="w-full">
                     <input type="text" placeholder="Enter your email here" class="outline-none ring-0 border-0 border-b w-full bg-zinc-200 focus:outline-none focus:ring-0 focus:border-b focus:border-zinc-900 px-0 py-3">
-                    <button class="w-full p-4 rounded text-white bg-zinc-900 mt-8">Subscribe</button>
+                    <button class="w-full p-4 rounded text-white bg-zinc-900 mt-8 mb-8">Subscribe</button>
                 </div>
             </div>
         </section>

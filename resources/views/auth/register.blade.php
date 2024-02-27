@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <div class="flex w-full h-screen bg-white">
-        <section class="w-full">
+    <div class="sm:flex w-full h-screen bg-white">
+        <section class="w-full h-80 sm:h-full">
             <img src="/images/login.jpeg" alt="login" class="object-cover h-full w-full">
         </section>
         <section class="w-full bg-white h-full flex items-center justify-center">
-            <div class="w-[30vw]">
+            <div class="md:w-[30vw] w-full px-10">
                 <div class="logo flex items-center justify-center w-full mb-6">
                     <a href="/" class="cursor-pointer">
                         <img src="/logo-b.png" alt="logo" class="h-12 md:h-16">
