@@ -12,7 +12,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 class Category extends Model
 {
-    use HasFactory, HasSlug, HasRecursiveRelationships;
+    use HasFactory, HasSlug;
 
     protected $guarded = [];
 
