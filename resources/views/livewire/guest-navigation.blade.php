@@ -104,7 +104,7 @@
                                 x-transition:enter-start="transform opacity-0 scale-95">
                                 <ul
                                     class="[&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]">
-                                    <li>Dream Gloves</li>
+                                    <li><a href="{{ route('customize') }}">Dream Gloves</a></li>
                                     <li>Dream Belt</li>
                                     <li>Dream Batting Gloves</li>
                                     <li>Dream Elbow Guard</li>

@@ -1,0 +1,475 @@
+<div class="bg-white w-full h-full">
+    <div class="flex flex-col md:flex-row gap-12">
+      <div class="canvas-wraper w-full md:h-[82vh] h-[40vh]">
+        <div class="canvas-area">
+            <div id="container"></div>
+        </div>
+      </div>
+      <!-- toolbar -->
+      <div class="w-full h-[80vh] overflow-y-auto p-3 border-t">
+          <h3 class="mb-6 text-gray-900 text-2xl font-bold mt-5">Customize Options</h3>
+          <div x-data="{ activeTab: 1 }">
+
+            <!-- Buttons -->
+            <div class="flex">
+                <div
+                    role="tablist"
+                    class="max-[480px]:max-w-[180px] inline-flex flex-wrap justify-center bg-slate-200 rounded-[20px] p-1 mb-4"
+                    @keydown.right.prevent.stop="$focus.wrap().next()"
+                    @keydown.left.prevent.stop="$focus.wrap().prev()"
+                    @keydown.home.prevent.stop="$focus.first()"
+                    @keydown.end.prevent.stop="$focus.last()"
+                >
+                    <!-- Button #1 -->
+                    <button
+                        id="tab-1"
+                        class="flex-1 text-sm font-medium h-8 px-4 rounded-2xl whitespace-nowrap focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150 ease-in-out"
+                        :class="activeTab === 1 ? 'bg-white text-slate-900' : 'text-slate-600 hover:text-slate-900'"
+                        :tabindex="activeTab === 1 ? 0 : -1"
+                        :aria-selected="activeTab === 1"
+                        aria-controls="tabpanel-1"
+                        @click="activeTab = 1"
+                        @focus="activeTab = 1"
+                    >Base Options</button>
+                    <!-- Button #2 -->
+                    <button
+                        id="tab-2"
+                        class="flex-1 text-sm font-medium h-8 px-4 rounded-2xl whitespace-nowrap focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150 ease-in-out"
+                        :class="activeTab === 2 ? 'bg-white text-slate-900' : 'text-slate-600 hover:text-slate-900'"
+                        :tabindex="activeTab === 2 ? 0 : -1"
+                        :aria-selected="activeTab === 2"
+                        aria-controls="tabpanel-2"
+                        @click="activeTab = 2"
+                        @focus="activeTab = 2"
+                    >Colors</button>
+                </div>
+            </div>
+
+            <!-- Tab panels -->
+            <div class="w-full">
+                <div class="relative flex flex-col">
+
+                    <!-- Panel #1 -->
+                    <article
+                        id="tabpanel-1"
+                        class="w-full"
+                        role="tabpanel"
+                        tabindex="0"
+                        aria-labelledby="tab-1"
+                        x-show="activeTab === 1"
+                        x-transition:enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 transform order-first"
+                        x-transition:enter-start="opacity-0 -translate-y-8"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-300 transform absolute"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-12"
+                    >
+                        <div class="mb-2 space-y-5">
+                            {{-- Leather Option --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{leather: null}">
+                                    <legend>Leather Option</legend>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                      <label for="small"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="leather == 's'"
+                                        :class="leather == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="leather" id="small" type="radio" name="leather-choice" value="s" class="sr-only" aria-labelledby="leather-choice-0-label">
+                                        <p id="leather-choice-0-label">
+                                          Classic (Steerhide)
+                                        </p>
+                                      </label>
+
+                                      <label for="medium"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="leather == 'm'"
+                                        :class="leather == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="leather" id="medium" type="radio" name="leather-choice" value="m" class="sr-only"
+                                          aria-labelledby="leather-choice-0-label">
+                                        <p id="leather-choice-0-label">
+                                          Premier (Kip Leather)
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
+                            {{-- Throwing Hand --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{hand: null}">
+                                    <legend>Throwing Hand</legend>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                      <label for="left"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="hand == 's'"
+                                        :class="hand == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="hand" id="left" type="radio" name="hand-choice" value="s" class="sr-only" aria-labelledby="hand-choice-0-label">
+                                        <p id="hand-choice-0-label">
+                                          Left
+                                        </p>
+                                      </label>
+
+                                      <label for="right"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="hand == 'm'"
+                                        :class="hand == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="hand" id="right" type="radio" name="hand-choice" value="m" class="sr-only"
+                                          aria-labelledby="hand-choice-0-label">
+                                        <p id="hand-choice-0-label">
+                                          Right
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
+                            {{-- Sport --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{sport: null}">
+                                    <legend>Sport</legend>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                      <label for="softball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'softball'"
+                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          Softball
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          Baseball
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
+                            {{-- Position --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{position: null}">
+                                    <legend>Position</legend>
+                                    <div class="mt-4 grid grid-cols-3 gap-3">
+                                      <label for="softball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="position == 'softball'"
+                                        :class="position == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="position" id="softball" type="radio" name="position-choice" value="softball" class="sr-only" aria-labelledby="position-choice-0-label">
+                                        <p id="position-choice-0-label">
+                                          First Base Mitt
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="position == 'baseball'"
+                                        :class="position == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="position" id="baseball" type="radio" name="position-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="position-choice-0-label">
+                                        <p id="position-choice-0-label">
+                                          Catcher Mitt
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="position == 'baseball'"
+                                        :class="position == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="position" id="baseball" type="radio" name="position-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="position-choice-0-label">
+                                        <p id="position-choice-0-label">
+                                          Infield/Outfield Gloves
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
+                            {{-- Youth Size --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{sport: null}">
+                                    <legend>Youth Size</legend>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                      <label for="softball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'softball'"
+                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          Yes
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          No
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
+                            {{-- Size First Base --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{sport: null}">
+                                    <legend>Size First Base</legend>
+                                    <div class="mt-4 grid grid-cols-3 gap-3">
+                                      <label for="softball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'softball'"
+                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          12.25
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          12.5
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          12.75
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          13
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          13.25
+                                        </p>
+                                      </label>
+
+                                      <label for="baseball"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="sport == 'baseball'"
+                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
+                                          aria-labelledby="sport-choice-0-label">
+                                        <p id="sport-choice-0-label">
+                                          13.5
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Panel #2 -->
+                    <article
+                        id="tabpanel-2"
+                        class="w-full bg-white rounded-2xl shadow-xl min-[480px]:flex items-stretch focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
+                        role="tabpanel"
+                        tabindex="0"
+                        aria-labelledby="tab-2"
+                        x-show="activeTab === 2"
+                        x-transition:enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 transform order-first"
+                        x-transition:enter-start="opacity-0 -translate-y-8"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-300 transform absolute"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-12"
+                    >
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Web</h3>
+                            <div class="grid grid-cols-6 gap-5">
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #ffffff"></span>
+                                    <span class="text-xs mt-1">White</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #3d444b"></span>
+                                    <span class="text-xs mt-1">Bone</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #a2a5a4"></span>
+                                    <span class="text-xs mt-1">Grey</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #ffd101"></span>
+                                    <span class="text-xs mt-1">Yellow</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #f3e601"></span>
+                                    <span class="text-xs mt-1">Lime</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #d62598"></span>
+                                    <span class="text-xs mt-1">Pink</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #ea733d"></span>
+                                    <span class="text-xs mt-1">Orange</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #e10800"></span>
+                                    <span class="text-xs mt-1">Red</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #dea900"></span>
+                                    <span class="text-xs mt-1">Tan 1</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #db8a06"></span>
+                                    <span class="text-xs mt-1">Tan 2</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #a7662b"></span>
+                                    <span class="text-xs mt-1">Caramel</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #5c4738"></span>
+                                    <span class="text-xs mt-1">Light Brwon</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #543a3b"></span>
+                                    <span class="text-xs mt-1">Dark Brwon</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #36573b"></span>
+                                    <span class="text-xs mt-1">Green</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #5a6833"></span>
+                                    <span class="text-xs mt-1">Army Green</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #98d55c"></span>
+                                    <span class="text-xs mt-1">Sweet Lime</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #003ca2"></span>
+                                    <span class="text-xs mt-1">Royal Blue</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #00b097"></span>
+                                    <span class="text-xs mt-1">Teal</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #3a3a59"></span>
+                                    <span class="text-xs mt-1">Navy</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #5f9bc6"></span>
+                                    <span class="text-xs mt-1">Baby Blue</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #2e1373"></span>
+                                    <span class="text-xs mt-1">Purple</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #3d444b"></span>
+                                    <span class="text-xs mt-1">Charcoal Grey</span>
+                                </div>
+                                <div class="flex flex-col cursor-pointer items-center justify-center">
+                                    <span class="h-12 w-full rounded-lg shadow-xl border" style="background: #000000"></span>
+                                    <span class="text-xs mt-1">Black</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script>
+        var width = 100;
+        var height = 100;
+
+        const container = document.querySelector(".canvas-wraper");
+        const observer = new ResizeObserver(() => {
+            width = container.offsetWidth - 80;
+            height = container.offsetHeight;
+        });
+        observer.observe(container);
+
+        var stage = new Konva.Stage({
+            container: 'container',
+            width: 600,
+            height: 600,
+        });
+
+        var layer = new Konva.Layer();
+        stage.add(layer);
+
+
+
+        var imageObj = new Image();
+        imageObj.onload = function () {
+            var base = new Konva.Image({
+                x: 0,
+                y: 0,
+                image: imageObj,
+                width: 600,
+                height: 600,
+            });
+
+            // add the shape to the layer
+            layer.add(base);
+        };
+        imageObj.src = '/builder/gloves.png';
+
+        // Logo Layer
+        var logoeObj = new Image();
+        logoeObj.onload = function () {
+            var logo = new Konva.Image({
+                x: 125,
+                y: 215,
+                image: logoeObj,
+                width: 46,
+                height: 162,
+            });
+            layer.add(logo);
+        };
+        logoeObj.src = '/builder/text.svg';
+
+
+    </script>
+
+</div>
