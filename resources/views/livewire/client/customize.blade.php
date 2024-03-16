@@ -1,18 +1,18 @@
 <div class="bg-white w-full h-full">
-    <div class="flex flex-col md:flex-row gap-12">
+    <div class="flex flex-col md:flex-row">
       <div class="canvas-wraper w-full md:h-[83vh] h-[40vh] flex items-center justify-center overflow-hidden">
-        <figure class="h-full w-full relative">
+        <figure class="relative">
             <img src="/builder/gloves.png" class="w-full h-full object-contain">
-            {{-- <img src="/builder/text.svg" class="absolute top-[26.6vh] left-[13.8vw] w-9"> --}}
-            <x-builders.brandtext class="absolute -top-[6px] left-[13.88vw] w-[32px] h-full" :color="$brandtextcolor" />
-            <x-builders.bind class="absolute bottom-[10vh] left-[12.7vw] w-[162px]" :color="$bindcolor" />
-            <x-builders.laces class="absolute top-[5vh] left-[10.1vw] h-[62vh]" :color="$lacescolor" />
-            <x-builders.wrist class="absolute bottom-[7vh] left-[13.6vw] h-[12vh]" :color="$wristcolor" />
-            <x-builders.brandlogo class="absolute bottom-[8.5vh] left-[16.7vw] w-[64px]" :color="$brandlogocolor" />
+
+            {{-- <x-builders.brandtext class="absolute -top-[6px] left-[13.88vw] w-[32px] h-full" :color="$brandtextcolor" /> --}}
+            <x-builders.bind class="absolute bottom-[12.7%] left-[17.8%] w-[32%]" :color="$bindcolor" />
+            {{-- <x-builders.laces class="absolute top-[5vh] left-[10.1vw] h-[62vh]" :color="$lacescolor" /> --}}
+            <x-builders.wrist class="absolute bottom-[8.7%] left-[20%] w-[36%] rotate-3" :color="$wristcolor" />
+            <x-builders.brandlogo class="absolute bottom-[9.8%] left-[28.7%] w-[13%]" :color="$brandlogocolor" />
         </figure>
       </div>
       <!-- toolbar -->
-      <div class="w-full h-[80vh] overflow-y-auto p-3 border-t">
+      <div class="w-full h-[80vh] overflow-y-auto p-3">
           <h3 class="mb-6 text-gray-900 text-2xl font-bold mt-5">Customize Options</h3>
           <div x-data="{ activeTab: 1 }">
 
@@ -318,7 +318,7 @@
                         x-transition:leave-end="opacity-0 translate-y-12"
                     >
                         {{-- Brand Text Color --}}
-                        <div class="w-full p-5">
+                        <div class="w-full p-5 hidden">
                             <h3 class="border-b mb-3 pb-1">Brand Text</h3>
                             <div class="grid grid-cols-6 gap-5">
                                 <div class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('brandtextcolor', '#ffffff')">
@@ -615,7 +615,7 @@
                         </div>
 
                         {{-- Laces Color --}}
-                        <div class="w-full p-5">
+                        <div class="w-full p-5 hidden">
                             <h3 class="border-b mb-3 pb-1">Laces Color</h3>
                             <div class="grid grid-cols-6 gap-5">
                                 <div class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('lacescolor', '#ffffff')">
