@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Client\SingleProduct;
 use App\Livewire\Client\ItemByCategory;
 use App\Http\Controllers\AdminController;
+use App\Livewire\Client\Customize\Gloves;
 use App\Http\Controllers\StripeController;
 use App\Livewire\Client\ProductByCategory;
 use App\Livewire\Admin\Product\ProductEdit;
 use App\Livewire\Admin\Product\ProductIndex;
 use App\Livewire\Admin\Product\ProductCreate;
 use App\Livewire\Admin\Category\CategoryIndex;
+use App\Livewire\Client\Customize\BattingGloves;
 use App\Livewire\Client\ProductByCategory\Clearance;
 use App\Livewire\Client\ProductByCategory\Accessories;
 use App\Livewire\Client\ProductByCategory\Apparel\Belts;
@@ -93,5 +95,8 @@ Route::get('/category/clearance', Clearance::class)->name('clearance');
 Route::get('/category/accessories', Accessories::class)->name('accessories');
 
 Route::get('product/{slug}', SingleProduct::class)->name('single-product');
-Route::get('customize', Customize::class)->name('customize');
 Route::get('/category/{slug}', ProductByCategory::class)->name('product_by_category');
+
+// Customize
+Route::get('/customize/batting-gloves', BattingGloves::class)->name('customize-batting-gloves');
+Route::get('/customize/dream-gloves', Gloves::class)->name('customize-gloves');
