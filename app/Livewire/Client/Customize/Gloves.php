@@ -4,11 +4,21 @@ namespace App\Livewire\Client\Customize;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
 
 #[Layout('layouts.app')]
 class Gloves extends Component
 {
+    use WithFileUploads;
+
+    #[Validate('image|max:1024')]
+    public $custombrand;
+
     public $cartitems, $sub_total = 0, $total = 0, $tax = 0;
+
+    public $customText = '';
+    public $customTextColor = '#000000';
 
     public $colors = [
         'white' => '#ffffff',

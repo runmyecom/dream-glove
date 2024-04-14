@@ -26,3 +26,16 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
+
+
+.carousel {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
