@@ -13,7 +13,7 @@
                     <x-builders.dreamglove.logoright class="absolute bottom-[29%] right-[47.3%] w-[9.5%] z-10" :color="$logocolor" />
                     <x-builders.dreamglove.logoleft class="absolute bottom-[14%] left-[25%] w-[9.6%] z-10" :color="$logocolor" />
 
-                    <div class="font-bold absolute top-[40.5%] right-[19.8%] -rotate-[62deg] h-[4%] text-[0.55rem] md:text-[1rem] overflow-clip w-[34%] flex items-center justify-center" style="color: {{$customTextColor}};text-transform: {{$customTextTransform}}">{{$customText}}</div>
+                    <div class="font-bold absolute top-[40.5%] right-[19.8%] -rotate-[62deg] h-[4%] text-[0.4rem] md:text-[0.8rem] overflow-clip w-[36%] flex items-center justify-center" style="color: {{$customTextColor}};text-transform: {{$customTextTransform}}">{{$customText}}</div>
 
                     @if ($custombrand)
                         <img src="{{ $custombrand->temporaryUrl() }}" class="absolute -rotate-[68deg] bottom-[25.5%] right-[40.6%] w-[80px] object-contain">
