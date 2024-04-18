@@ -17,8 +17,8 @@ class Gloves extends Component
 
     public $cartitems, $sub_total = 0, $total = 0, $tax = 0;
 
-    public $customText = 'Vimal Bharti He';
-    public $customTextTransform = 'capitalize';
+    public $customText = '';
+    public $customTextTransform = '';
     public $customTextColor = '#000000';
 
     public $colors = [
