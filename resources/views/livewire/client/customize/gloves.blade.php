@@ -13,10 +13,10 @@
                     <x-builders.dreamglove.logoright class="absolute bottom-[29%] right-[47.3%] w-[9.5%] z-10" :color="$logocolor" />
                     <x-builders.dreamglove.logoleft class="absolute bottom-[14%] left-[25%] w-[9.6%] z-10" :color="$logocolor" />
 
-                    <div class="font-bold absolute top-[40.5%] right-[22.8%] -rotate-[64deg] h-[4%] text-[1vw] overflow-clip w-[30%] flex items-center justify-center" style="color: {{$customTextColor}}">{{$customText}}</div>
+                    <div class="font-bold absolute top-[40.5%] right-[19.8%] -rotate-[62deg] h-[4%] text-[0.55rem] md:text-[1rem] overflow-clip w-[34%] flex items-center justify-center" style="color: {{$customTextColor}};text-transform: {{$customTextTransform}}">{{$customText}}</div>
 
                     @if ($custombrand)
-                    <img src="{{ $custombrand->temporaryUrl() }}" class="absolute -rotate-[68deg] bottom-[25.5%] right-[40.6%] w-[80px] object-contain">
+                        <img src="{{ $custombrand->temporaryUrl() }}" class="absolute -rotate-[68deg] bottom-[25.5%] right-[40.6%] w-[80px] object-contain">
                     @endif
                 </div>
                 <div class="carousel-item relative h-full">
@@ -117,9 +117,14 @@
                         <div class="mb-2 space-y-5">
                             <div class="w-full field-group border p-4 rounded-xl">
                                 <h3>Custom Text <small>(maximum 15 characters)</small></h3>
-                                <div class="flex w-full items-center justify-center gap-5">
+                                <div class="flex w-full items-center justify-center gap-2">
                                     <x-input wire:model.live='customText' maxlength="15" class="w-full" />
-                                    <input type="color" wire:model.live="customTextColor" class="h-10 w-24">
+                                    <button class="w-16 border rounded h-10 flex items-center justify-center" wire:click="$set('customTextTransform', 'uppercase' )">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 18q-.425 0-.712-.288T16.5 17v-5.2l-.9.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.6-2.6q.3-.3.7-.3t.7.3l2.6 2.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9V17q0 .425-.287.713T17.5 18M5.9 15.175l-.8 2.25q-.1.275-.325.425t-.5.15q-.475 0-.737-.387T3.45 16.8L6.9 7.6q.1-.275.35-.437T7.775 7h.675q.275 0 .525.163t.35.437l3.45 9.225q.175.425-.087.8t-.713.375q-.275 0-.512-.162t-.338-.438l-.775-2.225zm.575-1.6H9.75l-1.625-4.55h-.1z"/></svg>
+                                    </button>
+                                    <button class="h-10 w-16 bg-black">
+                                        <input type="color" wire:model.live="customTextColor" class="h-full">
+                                    </button>
                                 </div>
                             </div>
 
