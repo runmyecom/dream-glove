@@ -12,7 +12,7 @@ class Adult extends Component
     public function render()
     {
         return view('livewire.client.product-by-category.baseball.battinggloves.adult', [
-            'products' => Product::where('category_name', 'baseball-batting-gloves-adult')->get()
+            'products' => Product::where('category_name', 'baseball-batting-gloves-adult')->paginate(6)
         ]);
     }
 }

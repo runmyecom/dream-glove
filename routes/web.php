@@ -3,14 +3,18 @@
 use App\Livewire\Client\Cart;
 use App\Livewire\Client\Product;
 use App\Livewire\Client\Checkout;
+use App\Livewire\Client\SingleAccessories;
+use App\Livewire\Client\SingleBelt;
 use App\Livewire\Client\Thankyou;
 use App\Livewire\Client\WishList;
 use App\Livewire\Admin\AdminPanel;
 use App\Livewire\Client\Customize;
+use App\Livewire\Client\SingleGuard;
 use App\Livewire\Client\ShoppingCart;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Client\SingleProduct;
 use App\Livewire\Client\ItemByCategory;
+use App\Livewire\Client\SingleBaseball;
 use App\Http\Controllers\AdminController;
 use App\Livewire\Client\Customize\Gloves;
 use App\Http\Controllers\StripeController;
@@ -54,11 +58,12 @@ Route::middleware('admin:admin')->group(function (){
 Route::middleware(['auth:sanctum,admin', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/admin/dashboard', AdminPanel::class)->name('admin-panel')->middleware('auth:admin');
 
-    Route::get('/categories/all', CategoryIndex::class)->name('category.index');
-    Route::get('/products', ProductIndex::class)->name('product.index');
-    Route::get('/product/create', ProductCreate::class)->name('product.create');
-    Route::get('/product/edit/{id}', ProductEdit::class)->name('product.edit');
+
 });
+Route::get('/categories/all', CategoryIndex::class)->name('category.index');
+Route::get('/products', ProductIndex::class)->name('product.index');
+Route::get('/product/create', ProductCreate::class)->name('product.create');
+Route::get('/product/edit/{id}', ProductEdit::class)->name('product.edit');
 
 
 // Auth Client Routes
@@ -84,15 +89,25 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 // Guest/Client Routes
 Route::get('/category/baseball/batting-gloves/adult', Adult::class)->name('baseball-batting-gloves-adult');
 Route::get('/category/baseball/batting-gloves/youth', Youth::class)->name('baseball-batting-gloves-youth');
+Route::get('product/baseball/{slug}', SingleBaseball::class)->name('single-baseball');
+
 Route::get('/category/baseball/fielding-gloves/infield/classic', InfieldClassic::class)->name('baseball-fielding-gloves-infield-classic');
 Route::get('/category/baseball/fielding-gloves/infield/premier', InfieldPremier::class)->name('baseball-fielding-gloves-infield-premier');
 Route::get('/category/baseball/fielding-gloves/outfield/classic', OutfieldClassic::class)->name('baseball-fielding-gloves-outfield-classic');
 Route::get('/category/baseball/fielding-gloves/outfield/premier', InfieldPremier::class)->name('baseball-fielding-gloves-outfield-premier');
+
 Route::get('/category/baseball/guard', Guard::class)->name('baseball-guard');
+Route::get('product/guard/{slug}', SingleGuard::class)->name('single-guard');
+
 Route::get('/category/apparel/belts', Belts::class)->name('apparel-belts');
+Route::get('product/belts/{slug}', SingleBelt::class)->name('single-belt');
+
 Route::get('/category/apparel/clothing', Clothing::class)->name('apparel-clothing');
+
 Route::get('/category/clearance', Clearance::class)->name('clearance');
+
 Route::get('/category/accessories', Accessories::class)->name('accessories');
+Route::get('product/accessories/{slug}', SingleAccessories::class)->name('single-accessories');
 
 Route::get('product/{slug}', SingleProduct::class)->name('single-product');
 Route::get('/category/{slug}', ProductByCategory::class)->name('product_by_category');

@@ -22,6 +22,8 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('keyword')->nullable();
 
+            $table->string('thumbnail')->nullable();
+
             $table->string('bullet_1')->nullable();
             $table->string('bullet_2')->nullable();
             $table->string('bullet_3')->nullable();

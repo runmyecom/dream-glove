@@ -12,7 +12,7 @@ class Guard extends Component
     public function render()
     {
         return view('livewire.client.product-by-category.baseball.guard', [
-            'products' => Product::where('category_name', 'baseball-guard')->get()
+            'products' => Product::where('category_name', 'baseball-guard')->paginate(6)
         ]);
     }
 }

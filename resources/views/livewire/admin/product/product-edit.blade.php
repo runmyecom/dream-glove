@@ -16,7 +16,7 @@
     <!-- Basic Details -->
     <section class="p-6">
         <h3 class="mb-6 font-bold">General information*</h3>
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-3 gap-6">
             <!-- Product name -->
             <div class="">
                 <label class="text-gray-500 text-sm font-semibold">Product Name*</label>
@@ -29,6 +29,11 @@
             <div>
                 <label class="text-gray-500 text-sm font-semibold">MRP</label>
                 <x-input placeholder="Product Price" wire:model="mrp" class="w-full" />
+            </div>
+            <!-- Thumbnail -->
+            <div>
+                <label class="text-gray-500 text-sm font-semibold">Thumbnail</label>
+                <x-input placeholder="Thumbnail URL" wire:model="thumbnail" class="w-full" />
             </div>
         </div>
     </section>

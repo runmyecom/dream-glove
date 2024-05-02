@@ -25,6 +25,7 @@ class ProductForm extends Form
     public $mrp;
     public $description;
     public $keyword;
+    public $thumbnail;
     public $bullet_1;
     public $bullet_2;
     public $bullet_3;
@@ -40,6 +41,7 @@ class ProductForm extends Form
         $this->name = $product->name;
         $this->mrp = $product->mrp;
         $this->description = $product->description;
+        $this->thumbnail = $product->thumbnail;
         $this->bullet_1 = $product->bullet_1;
         $this->bullet_2 = $product->bullet_2;
         $this->bullet_3 = $product->bullet_3;
@@ -59,6 +61,7 @@ class ProductForm extends Form
         $prod->name = $this->name;
         $prod->mrp = $this->mrp;
         $prod->description = $this->description;
+        $prod->thumbnail = $this->thumbnail;
         $prod->bullet_1 = $this->bullet_1;
         $prod->bullet_2 = $this->bullet_2;
         $prod->bullet_3 = $this->bullet_3;

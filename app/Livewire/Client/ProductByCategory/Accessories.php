@@ -12,7 +12,7 @@ class Accessories extends Component
     public function render()
     {
         return view('livewire.client.product-by-category.accessories', [
-            'products' => Product::where('category_name', 'accessories')->get()
+            'products' => Product::where('category_name', 'accessories')->paginate(6)
         ]);
     }
 }

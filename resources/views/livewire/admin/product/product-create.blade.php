@@ -21,8 +21,8 @@
 
         <!-- Product name -->
         <div class="col-span-12 mb-6">
-            <x-label for="form.category_id" value="Select Category" />
-            <select x-model="form.category_name" class="w-full rounded-lg border-gray-300">
+            <x-label for="form.category_name" value="Select Category" />
+            <select wire:model="form.category_name" class="w-full rounded-lg border-gray-300">
                 <option disabled value="">Select Category</option>
                 <option value="clearance">Clearance</option>
                 <option value="accessories">Accessories</option>
@@ -38,7 +38,7 @@
             </select>
         </div>
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-3 gap-6">
             <!-- Product name -->
             <div class="">
                 <label for="name" class="text-gray-500 text-sm font-semibold">Product Name*</label>
@@ -51,6 +51,11 @@
             <div>
                 <label class="text-gray-500 text-sm font-semibold">MRP</label>
                 <x-input placeholder="Product Price" wire:model="form.mrp" class="w-full" />
+            </div>
+            <!-- Thumbnail -->
+            <div>
+                <label class="text-gray-500 text-sm font-semibold">Thumbnail</label>
+                <x-input placeholder="Thumbnail URL" wire:model="form.thumbnail" class="w-full" />
             </div>
         </div>
 

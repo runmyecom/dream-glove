@@ -12,7 +12,7 @@ class Youth extends Component
     public function render()
     {
         return view('livewire.client.product-by-category.baseball.battinggloves.youth', [
-            'products' => Product::where('category_name', 'baseball-batting-gloves-youth')->get()
+            'products' => Product::where('category_name', 'baseball-batting-gloves-youth')->paginate(6)
         ]);
     }
 }

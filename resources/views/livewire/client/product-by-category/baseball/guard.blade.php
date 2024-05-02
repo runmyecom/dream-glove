@@ -1,15 +1,16 @@
 <div>
     <section class="max-w-7xl mx-auto py-12">
-        <h2 class="font-bold md:text-[2em] text-[2em] text-center">Baseball > Guard</h2>
+        <h2 class="font-bold md:text-[3em] text-[2.5em] text-center">Baseball > Guard</h2>
         {{-- <p class="text-center mb-12">Experience sophistication with every piece - where elegance meets functionality in a <br/> perfect blend of style and practicality.</p> --}}
-        <div class="grid md:grid-cols-4 gap-5">
+        <div class="grid md:grid-cols-3 gap-5 mt-12">
             @foreach ($products as $product)
                 <div class="card">
-                    <a href="{{ route('single-product', $product->slug) }}" class="image bg-gray-100 p-5 rounded-xl overflow-hidden shadow md:h-[40vh] h-[30vh] flex items-center justify-center relative group cursor-pointer">
+                    <a href="{{ route('single-guard', $product->slug) }}" class="image bg-gray-100 rounded-xl overflow-hidden shadow md:h-[45vh] h-[30vh] flex items-center justify-center relative group cursor-pointer">
                         @php
                             $images = App\Models\ProductImages::where('product_unique_id', $product->unique_id)->get();
                         @endphp
-                        <img src="{{ asset('uploads/all/' . $images[0]->image) }}" alt="" class="group-hover:scale-125 transition duration-700 ease-in-out">
+                        {{-- <img src="{{ asset('uploads/all/' . $images[0]->image) }}" alt="" class="group-hover:scale-125 transition duration-700 ease-in-out h-full w-full object-cover"> --}}
+                        <img src="{{$product->thumbnail}}" alt="" class="group-hover:scale-125 transition duration-700 ease-in-out h-full w-full object-cover">
 
                         <button class="bg-white shadow-xl rounded-full h-10 w-10 items-center justify-center absolute top-4 right-4 text-gray-700 hidden group-hover:flex transition duration-300 ease-in-out">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/></svg>
@@ -22,6 +23,9 @@
                     <h4>${{ $product->mrp }}</h4>
                 </div>
             @endforeach
+        </div>
+        <div class="mt-12">
+            {{$products->links()}}
         </div>
     </section>
 </div>

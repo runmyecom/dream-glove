@@ -25,6 +25,7 @@ class ProductEdit extends Component
     public $name;
     public $mrp;
     public $description;
+    public $thumbnail;
     public $bullet_1;
     public $bullet_2;
     public $bullet_3;
@@ -40,6 +41,7 @@ class ProductEdit extends Component
         $this->name = $product->name;
         $this->mrp = $product->mrp;
         $this->description = $product->description;
+        $this->thumbnail = $product->thumbnail;
         $this->bullet_1 = $product->bullet_1;
         $this->bullet_2 = $product->bullet_2;
         $this->bullet_3 = $product->bullet_3;
@@ -64,6 +66,7 @@ class ProductEdit extends Component
         $product->name = $this->name;
         $product->mrp = $this->mrp;
         $product->description = $this->description;
+        $product->thumbnail = $this->thumbnail;
         $product->bullet_1 = $this->bullet_1;
         $product->bullet_2 = $this->bullet_2;
         $product->bullet_3 = $this->bullet_3;
