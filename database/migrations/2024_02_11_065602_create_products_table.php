@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('slug')->nullable()->unique();
-            $table->string('mrp');
+            $table->string('mrp')->nullable();
             $table->longText('description')->nullable();
             $table->string('keyword')->nullable();
 
