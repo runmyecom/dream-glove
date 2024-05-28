@@ -1,7 +1,7 @@
 <div class="h-screen bg-gray-100 pt-20">
     <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
     @if ($this->total != '0')
-        <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+        <div class="mx-auto max-w-5xl justify-center md:flex md:space-x-6 xl:px-0 px-6">
             <div class="rounded-lg md:w-2/3">
                 @foreach ($cartitems as $item)
                     <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
@@ -9,7 +9,7 @@
                             $images = App\Models\ProductImages::where('product_unique_id', $item->product->unique_id)->get();
                         @endphp
                         <figure class="shadow-xl rounded-xl h-16 overflow-hidden p-1">
-                            <img src="{{ asset('uploads/all/' . $images[0]->image) }}" alt="{{$item->product->name}}" class="w-full rounded-lg sm:w-20 h-16 object-cover">
+                            <img src="{{$item->product->thumbnail}}" alt="{{$item->product->name}}" class="w-full rounded-lg sm:w-20 h-16 object-cover">
                         </figure>
 
                         <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <a href="{{ route('checkout') }}">
-                    <button class="w-full mt-6 rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+                    <button class="w-full mt-6 rounded-md bg-gray-900 py-1.5 font-medium text-blue-50 hover:bg-gray-700">Check out</button>
                 </a>
             </div>
 
@@ -66,6 +66,16 @@
             </a>
         </div>
     @endif
+
+    <section class="xl:px-0 px-6 max-w-5xl mx-auto mt-12">
+        <div class="bg-gray-200 p-12 w-full flex items-center justify-between gap-5 rounded-xl">
+            <div>
+                <h3 class="font-bold">Continue Shopping</h3>
+                <p class="text-sm text-gray-700">Discover more products that are perfect for gift, for your wardrobe, or a unique addition to your collection.</p>
+            </div>
+            <a href="/" class="bg-gray-900 text-white py-2 px-5 rounded-lg text-sm">Continue Shopping</a>
+        </div>
+    </section>
 
   </div>
 

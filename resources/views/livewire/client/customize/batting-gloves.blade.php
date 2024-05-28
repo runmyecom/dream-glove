@@ -73,6 +73,36 @@
                         x-transition:leave-end="opacity-0 translate-y-12"
                     >
                         <div class="mb-2 space-y-5">
+
+                            {{-- Choose Model --}}
+                            <div class="relative field-group border p-4 rounded-xl">
+                                <fieldset x-data="{leather: null}">
+                                    <legend>Choose Model</legend>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                      <label for="small"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="leather == 's'"
+                                        :class="leather == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="leather" id="small" type="radio" name="leather-choice" value="s" class="sr-only" aria-labelledby="leather-choice-0-label">
+                                        <p id="leather-choice-0-label">
+                                          As
+                                        </p>
+                                      </label>
+
+                                      <label for="medium"
+                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
+                                        :aria-checked="leather == 'm'"
+                                        :class="leather == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
+                                        <input x-model="leather" id="medium" type="radio" name="leather-choice" value="m" class="sr-only"
+                                          aria-labelledby="leather-choice-0-label">
+                                        <p id="leather-choice-0-label">
+                                          Wave
+                                        </p>
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                            </div>
+
                             {{-- Leather Option --}}
                             <div class="relative field-group border p-4 rounded-xl">
                                 <fieldset x-data="{leather: null}">
@@ -353,6 +383,19 @@
                                 @endforeach
                             </div>
                         </div>
+
+                        {{-- Binding --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Binding</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('meshcolor', '{{$color}}')">
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
                         {{-- WristBand Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Wrist Band Color</h3>
@@ -364,9 +407,85 @@
                                 @endforeach
                             </div>
                         </div>
-                        {{-- Top Logo Color --}}
+
+                        {{-- Strap --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Strap</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Strap Binding --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Strap Binding</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Logo Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Logo Color</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Logo Outline --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Logo Outline</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Patches --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Patches</h3>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Stitches --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Stitches</h3>
                             <div class="grid grid-cols-5 gap-3">
                                 @foreach ($colors as $color)
                                     <button
