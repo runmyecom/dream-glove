@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="w-full">
-        <img src="/images/hero-2.webp" alt="" class="md:h-[85vh] h-[40vh] w-full object-cover">
+        <img src="/images/hero.png" alt="" class="h-full w-full object-cover">
 
         <!-- Featured Products -->
         <section class="p-6 md:p-12">
