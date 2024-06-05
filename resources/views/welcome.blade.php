@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="w-full">
-        <img src="/images/hero.png" alt="" class="h-full w-full object-cover">
+        <img src="/images/hero.jpeg" alt="" class="h-full w-full object-cover">
 
         <!-- Featured Products -->
         <section class="p-6 md:p-12">
@@ -65,21 +65,21 @@
         {{-- Categories grid --}}
         <div class="grid md:grid-cols-3">
             <div class="relative group overflow-hidden cursor-pointer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Baltimore_Orioles_batting_gloves_%287436167842%29.jpg/640px-Baltimore_Orioles_batting_gloves_%287436167842%29.jpg" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
+                <img src="/images/pro_1.png" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-red-600/50">
                     <span class=" text-white font-bold md:text-[3em] text-[2.5em]">Batting <br/> Gloves</span>
                     <a class="opacity-0 group-hover:opacity-100 bg-gray-900/75 backdrop-blur-md text-white px-5 py-2 rounded-lg" href="{{route('customize-batting-gloves')}}">Customize now</a>
                 </div>
             </div>
             <div class="relative group overflow-hidden cursor-pointer">
-                <img src="https://preview.thenewsmarket.com/Previews/NBAS/StillAssets/960x540/640682.jpg" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
+                <img src="/images/gloves.png" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-indigo-600/50">
                     <span class=" text-white font-bold md:text-[3em] text-[2.5em]">Custom <br/> Gloves</span>
                     <a class="opacity-0 group-hover:opacity-100 bg-gray-900/75 backdrop-blur-md text-white px-5 py-2 rounded-lg" href="{{route('customize-gloves')}}">Customize now</a>
                 </div>
             </div>
             <div class="relative group overflow-hidden cursor-pointer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBNdMnNIAY33FJW8_A0oPKAIcfpuxNOfXSA&usqp=CAU" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
+                <img src="/images/pro_4.png" alt="" class="w-full md:h-full h-[30vh] object-cover  group-hover:scale-125 transition duration-700 ease-in-out">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-yellow-600/50">
                     <span class=" text-white font-bold md:text-[3em] text-[2.5em]">Custom <br/> Belts</span>
                     <RouterLink class="opacity-0 group-hover:opacity-100 bg-gray-900/75 backdrop-blur-md text-white px-5 py-2 rounded-lg" to="/customize">Customize now</RouterLink>
