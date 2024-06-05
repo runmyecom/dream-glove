@@ -1,6 +1,8 @@
 <x-app-layout>
     <div class="w-full">
-        <img src="/images/hero.jpeg" alt="" class="h-full w-full object-cover">
+        <a href="{{route('customize-gloves')}}">
+            <img src="/images/hero.jpeg" alt="" class="h-full w-full object-cover">
+        </a>
 
         <!-- Featured Products -->
         <section class="p-6 md:p-12">
