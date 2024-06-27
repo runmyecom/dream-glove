@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Client\Cart;
+use App\Livewire\Client\Customize\Custombelt;
 use App\Livewire\Client\Product;
 use App\Livewire\Client\Checkout;
 use App\Livewire\Client\SingleAccessories;
@@ -115,3 +116,4 @@ Route::get('/category/{slug}', ProductByCategory::class)->name('product_by_categ
 // Customize
 Route::get('/customize/batting-gloves', BattingGloves::class)->name('customize-batting-gloves');
 Route::get('/customize/dream-gloves', Gloves::class)->name('customize-gloves');
+Route::get('/customize/dream-belts', Custombelt::class)->name('customize-belts');
