@@ -4,9 +4,19 @@
         <figure class="relative">
             <img src="/builder/belt.png" class="w-full h-full object-contain">
 
+            <x-builders.belt.loop class="absolute top-[40.3%] right-[40%] w-[8.5%] h-[20%]" :color="$loopcolor" />
+
+            <x-builders.belt.beltcolorone class="absolute top-[40.7%] -left-[34.8%] h-[18%] w-full" :color="$beltcolor" />
+            <x-builders.belt.beltcolortwo class="absolute top-[45.9%] -left-[9.17%] h-[14.3%] w-full" :color="$beltcolor" />
+            <x-builders.belt.beltcolorthree class="absolute top-[44.9%] left-[26.6%] h-[14.5%] w-full" :color="$beltcolor" />
+            <x-builders.belt.beltcolorfour class="absolute top-[42.5%] left-[28.1%] h-[3.2%] w-full" :color="$beltcolor" />
+
+            <x-builders.belt.stich class="absolute bottom-[42.4%] right-[35.4%] w-full h-[15.5%]" :color="$stichcolor" />
+            <x-builders.belt.stichtwo class="absolute bottom-[40.2%] right-[9.4%] w-full h-[13.3%]" :color="$stichcolor" />
+            <x-builders.belt.stichthree class="absolute bottom-[39.5%] left-[6%] w-full h-[15.3%]" :color="$stichcolor" />
+            <x-builders.belt.stichfour class="absolute bottom-[41.2%] left-[26.5%] w-full h-[13%]" :color="$stichcolor" />
+
             <x-builders.belt.logo class="absolute top-[48%] right-[15.2%] w-[8%]" :color="$logocolor" />
-            <x-builders.belt.loop class="absolute top-[44.6%] right-[40%] h-[15.8%]" :color="$logocolor" />
-            <x-builders.belt.beltcolor class="absolute top-[0%] right-[40%] h-[8%] w-full bg-green-300" :color="$logocolor" />
         </figure>
       </div>
       <!-- toolbar -->
@@ -345,154 +355,52 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-12"
                     >
-                        {{-- Palm Color --}}
+                        {{-- Belt Color --}}
                         <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Palm Color</h3>
+                            <h3 class="border-b mb-3 pb-1">Belt Color</h3>
                             <div class="grid grid-cols-5 gap-3">
                                 @foreach ($colors as $color)
-                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('palmcolor', '{{$color}}')">
+                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('beltcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
                         </div>
 
-                        {{-- Palm Color --}}
+                        {{-- Loop Color --}}
                         <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Leather Color</h3>
+                            <h3 class="border-b mb-3 pb-1">Loop Color</h3>
                             <div class="grid grid-cols-5 gap-3">
                                 @foreach ($colors as $color)
-                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('leathercolor', '{{$color}}')">
+                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('loopcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
                         </div>
-                        {{-- Mesh Color --}}
+                        {{-- Stich Color --}}
                         <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Mesh Color</h3>
+                            <h3 class="border-b mb-3 pb-1">Stich Color</h3>
                             <div class="grid grid-cols-5 gap-3">
                                 @foreach ($colors as $color)
-                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('meshcolor', '{{$color}}')">
+                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('stichcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
                         </div>
-
-                        {{-- Binding --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Binding</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('meshcolor', '{{$color}}')">
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- WristBand Color --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Wrist Band Color</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('wristbandcolor', '{{$color}}')">
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- Strap --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Strap</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- Strap Binding --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Strap Binding</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- Logo Color --}}
+                        {{-- Logo color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Logo Color</h3>
                             <div class="grid grid-cols-5 gap-3">
                                 @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
+                                    <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('logocolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
                         </div>
 
-                        {{-- Logo Outline --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Logo Outline</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- Patches --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Patches</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        {{-- Stitches --}}
-                        <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Stitches</h3>
-                            <div class="grid grid-cols-5 gap-3">
-                                @foreach ($colors as $color)
-                                    <button
-                                        class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
-                                    >
-                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        </div>
                     </article>
 
                 </div>

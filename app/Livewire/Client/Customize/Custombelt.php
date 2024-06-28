@@ -21,8 +21,10 @@ class Custombelt extends Component
         'yellow' => '#ffe947',
     ];
 
-    public $logocolor = 'red';
-    public $stich = 'transparent';
+    public $logocolor = 'transparent';
+    public $loopcolor = 'transparent';
+    public $beltcolor = 'transparent';
+    public $stichcolor = 'transparent';
 
     public function render()
     {
