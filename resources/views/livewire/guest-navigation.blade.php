@@ -108,7 +108,7 @@
                                 x-transition:enter-start="transform opacity-0 scale-95">
                                 <ul
                                     class="[&>li]:text-gray-900 [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-gray-50 active:[&>li]:bg-gray-50 active:[&>li]:scale-[0.99]">
-                                    <li><a href="{{route('customize-gloves')}}"><button class="w-full text-left">Dream Gloves</button></a></li>
+                                    <li><a href="{{route('customize-gloves-select-web')}}"><button class="w-full text-left">Dream Gloves</button></a></li>
                                     <li><a href="{{route('customize-batting-gloves')}}"><button class="w-full text-left">Dream Batting Gloves</button></a></li>
                                     <li><a href="{{route('customize-belts')}}"><button class="w-full text-left">Dream Belts</button></a></li>
                                 </ul>

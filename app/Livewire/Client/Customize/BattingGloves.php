@@ -26,6 +26,9 @@ class BattingGloves extends Component
     public $palmcolor = 'transparent';
     public $leathercolor = 'transparent';
     public $meshcolor = 'transparent';
+    public $binding = 'transparent';
+    public $patches = 'transparent';
+    public $logooutline = 'red';
     public $wristbandcolor = 'transparent';
     public $toplogocolor = 'transparent';
     public $bottomlogocolor = 'transparent';
