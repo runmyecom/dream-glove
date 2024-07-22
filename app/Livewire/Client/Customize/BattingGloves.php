@@ -33,6 +33,9 @@ class BattingGloves extends Component
     public $toplogocolor = 'transparent';
     public $bottomlogocolor = 'transparent';
     public $rightlogocolor = 'transparent';
+    public $strap = 'transparent';
+    public $strapbinding = 'transparent';
+    public $stiching = 'transparent';
 
     public function render()
     {

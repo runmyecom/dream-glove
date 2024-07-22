@@ -9,11 +9,15 @@
             <x-builders.battinglove.mesh class="absolute top-[3.5%] left-[0.4%] h-[91%] w-[81%] object-contain" :color="$meshcolor" />
             <x-builders.battinglove.binding class="absolute top-[14.7%] left-[10.9%] w-[34%] object-contain" :color="$binding" />
             <x-builders.battinglove.wristband class="absolute bottom-[7.1%] left-[15.6%] w-[61%] object-contain" :color="$wristbandcolor" />
+            <x-builders.battinglove.strap class="absolute bottom-[9.6%] left-[16.5%] w-[20.2%] object-contain" :color="$strap" />
+            <x-builders.battinglove.strapbinding class="absolute bottom-[7.4%] left-[14.4%] w-[22.3%] object-contain" :color="$strapbinding" />
             <x-builders.battinglove.logooutline class="absolute bottom-[8.9%] left-[1.5%] h-[38.8%] w-[88%] object-contain" :color="$logooutline" />
             <x-builders.battinglove.toplogo class="absolute bottom-[33.5%] left-[23.2%] h-[12.8%] object-contain" :color="$toplogocolor" />
             <x-builders.battinglove.bottomlogo class="absolute bottom-[11%] left-[26%] h-[10%] object-contain" :color="$bottomlogocolor" />
             <x-builders.battinglove.rightlogo class="absolute bottom-[10%] right-[32%] h-[7%] object-contain" :color="$rightlogocolor" />
             <x-builders.battinglove.patches class="absolute bottom-[25.3%] right-[21.1%] w-[28.3%] object-contain" :color="$patches" />
+            <x-builders.battinglove.stiching class="absolute top-[14%] left-[3.4%] w-[56%] object-contain" :color="$stiching" />
+
         </figure>
       </div>
       <!-- toolbar -->
@@ -320,7 +324,7 @@
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                        x-on:click="$wire.set('strap', '{{$color}}')"
                                     >
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
@@ -335,7 +339,7 @@
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                        x-on:click="$wire.set('strapbinding', '{{$color}}')"
                                     >
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
@@ -395,13 +399,37 @@
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
-                                        x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
+                                        x-on:click="$wire.set('stiching', '{{$color}}')"
                                     >
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
                         </div>
+
+                        {{-- Left Starp Custom Text --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Add right starp text</h3>
+                            <select name="" class="w-full">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <div class="my-4">
+                                <h3>Text(7|12)</h3>
+                                <input type="text" class="w-full p-2" placeholder="Enter text" />
+                            </div>
+                            <div class="grid grid-cols-5 gap-3">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('stiching', '{{$color}}')"
+                                    >
+                                        <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
                     </article>
 
                 </div>
