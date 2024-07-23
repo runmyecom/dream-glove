@@ -36,6 +36,14 @@ class BattingGloves extends Component
     public $strap = 'transparent';
     public $strapbinding = 'transparent';
     public $stiching = 'transparent';
+    public $righttextbox = false;
+    public $righttextbg = 'white';
+    public $righttext = '';
+    public $rightTextColor = 'black';
+    public $lefttextbox = false;
+    public $lefttextbg = 'white';
+    public $lefttext = '';
+    public $leftTextColor = 'black';
 
     public function render()
     {
