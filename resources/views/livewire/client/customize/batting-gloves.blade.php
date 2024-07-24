@@ -22,7 +22,7 @@
             @if ($righttextbox == true)
                 <div class="right-text absolute bottom-[9.6%] left-[16.5%] w-[20.2%] object-contain">
                     <x-builders.battinglove.strap class="" :color="$righttextbg" />
-                    <span class="absolute bottom-5 left-5 text-sm font-bold" style="color: {{$rightTextColor}}">{{$righttext}}</span>
+                    <span class="absolute bottom-4 left-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$rightTextColor}}">{{$righttext}}</span>
                 </div>
             @endif
 
@@ -30,7 +30,7 @@
             @if ($lefttextbox == true)
                 <div class="right-text absolute bottom-[7.1%] left-[15.6%] w-[61%] object-contain">
                     <x-builders.battinglove.wristband class="" :color="$lefttextbg" />
-                    <span class="absolute bottom-6 right-5 text-sm font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
+                    <span class="absolute bottom-5 right-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
                 </div>
             @endif
 
@@ -277,10 +277,10 @@
                         {{-- Palm Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Palm Color</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('palmcolor', '{{$color}}')">
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -289,10 +289,10 @@
                         {{-- Palm Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Leather Color</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('leathercolor', '{{$color}}')">
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -300,10 +300,10 @@
                         {{-- Mesh Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Mesh Color</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('meshcolor', '{{$color}}')">
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -312,10 +312,10 @@
                         {{-- Binding --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Binding</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('binding', '{{$color}}')">
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -324,10 +324,10 @@
                         {{-- WristBand Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Wrist Band Color</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('wristbandcolor', '{{$color}}'), $wire.set('lefttextbg', '{{$color}}')">
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -336,13 +336,13 @@
                         {{-- Strap --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Strap</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('strap', '{{$color}}'), $wire.set('righttextbg', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -351,13 +351,13 @@
                         {{-- Strap Binding --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Strap Binding</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('strapbinding', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -366,13 +366,13 @@
                         {{-- Logo Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Logo Color</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('toplogocolor', '{{$color}}'), $wire.set('bottomlogocolor', '{{$color}}'), $wire.set('rightlogocolor', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -381,13 +381,13 @@
                         {{-- Logo Outline --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Logo Outline</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('logooutline', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -396,13 +396,13 @@
                         {{-- Patches --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Patches</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('patches', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -411,13 +411,13 @@
                         {{-- Stitches --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Stitches</h3>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('stiching', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -438,13 +438,13 @@
                             </div>
 
                             <h4 class="font-bold mt-6">Text Color</h4>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('rightTextColor', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
@@ -465,13 +465,13 @@
                             </div>
 
                             <h4 class="font-bold mt-6">Text Color</h4>
-                            <div class="grid grid-cols-10 gap-2">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('leftTextColor', '{{$color}}')"
                                     >
-                                        <span class="h-14 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
