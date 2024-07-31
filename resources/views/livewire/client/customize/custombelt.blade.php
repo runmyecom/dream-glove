@@ -17,6 +17,13 @@
             <x-builders.belt.stichfour class="absolute bottom-[41.2%] left-[26.5%] w-full h-[13%]" :color="$stichcolor" />
 
             <x-builders.belt.logo class="absolute top-[48%] right-[15.2%] w-[8%]" :color="$logocolor" />
+
+            {{-- Custom Text --}}
+            @if ($customtextbox == true)
+                <div class="right-text absolute top-[47%] md:top-[46%] left-[36%] w-[26%] object-contain">
+                    <span class="absolute bottom-4 left-4 text-[1.5vh] md:text-[3vh] font-bold" style="color: {{$customTextColor}}">{{$customtext}}</span>
+                </div>
+            @endif
         </figure>
       </div>
       <!-- toolbar -->
@@ -396,6 +403,33 @@
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('logocolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                    </button>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        {{-- Right Starp Custom Text --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Add right starp text</h3>
+                            <div class="grid grid-cols-2 items-center gap-6 my-4">
+                                <div>
+                                    <input type="checkbox" id="hs-basic-usage" class="relative w-[3.25rem] h-7 p-px bg-gray-100 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-blue-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-blue-600 checked:border-blue-600 focus:checked:border-blue-600 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200" wire:model.live='customtextbox'>
+                                    <label for="hs-basic-usage" class="sr-only">switch</label>
+                                </div>
+                                <div class="w-full">
+                                    <h3>Text(7|12)</h3>
+                                    <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="customtext" maxlength="12" minlength="7" />
+                                </div>
+                            </div>
+
+                            <h4 class="font-bold mt-6">Text Color</h4>
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
+                                @foreach ($colors as $color)
+                                    <button
+                                        class="flex flex-col cursor-pointer items-center justify-center"
+                                        x-on:click="$wire.set('customTextColor', '{{$color}}')"
+                                    >
+                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>
