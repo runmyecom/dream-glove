@@ -84,7 +84,7 @@
                 <img src="/images/pro_4.png" alt="" class="w-full h-[60vh] object-contain  group-hover:scale-125 transition duration-700 ease-in-out">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-yellow-600/50">
                     <span class=" text-white font-bold md:text-[3em] text-[2.5em]">Custom <br/> Belts</span>
-                    <RouterLink class="opacity-0 group-hover:opacity-100 bg-gray-900/75 backdrop-blur-md text-white px-5 py-2 rounded-lg" to="/customize">Customize now</RouterLink>
+                    <a class="opacity-0 group-hover:opacity-100 bg-gray-900/75 backdrop-blur-md text-white px-5 py-2 rounded-lg" href="{{route('customize-belts')}}">Customize now</a>
                 </div>
             </div>
         </div>
