@@ -18,12 +18,17 @@
 
             <x-builders.belt.logo class="absolute top-[48%] right-[15.2%] w-[8%]" :color="$logocolor" />
 
-            {{-- Custom Text --}}
+            {{-- Inner Text --}}
             @if ($customtextbox == true)
                 <div class="right-text absolute top-[47%] md:top-[46%] left-[36%] w-[26%] object-contain">
                     <span class="absolute bottom-4 left-4 text-[1.5vh] md:text-[3vh] font-bold" style="color: {{$customTextColor}}">{{$customtext}}</span>
                 </div>
             @endif
+
+            {{-- Outer text --}}
+            <div class="right-text absolute bottom-[46%] left-[5%] w-[26%] object-contain">
+                <span class="absolute bottom-4 left-4 text-[1vh] md:text-[2.5vh] rotate-12 font-bold" style="color: {{$customTextColor}}">{{$outertext}}</span>
+            </div>
         </figure>
       </div>
       <!-- toolbar -->
@@ -87,260 +92,17 @@
                     >
                         <div class="mb-2 space-y-5">
 
-                            {{-- Choose Model --}}
+                            {{-- Belts Size --}}
                             <div class="relative field-group border p-4 rounded-xl">
                                 <fieldset x-data="{leather: null}">
-                                    <legend>Choose Model</legend>
-                                    <div class="mt-4 grid grid-cols-2 gap-3">
-                                      <label for="small"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="leather == 's'"
-                                        :class="leather == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="leather" id="small" type="radio" name="leather-choice" value="s" class="sr-only" aria-labelledby="leather-choice-0-label">
-                                        <p id="leather-choice-0-label">
-                                          As
-                                        </p>
-                                      </label>
-
-                                      <label for="medium"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="leather == 'm'"
-                                        :class="leather == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="leather" id="medium" type="radio" name="leather-choice" value="m" class="sr-only"
-                                          aria-labelledby="leather-choice-0-label">
-                                        <p id="leather-choice-0-label">
-                                          Wave
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Leather Option --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{leather: null}">
-                                    <legend>Leather Option</legend>
-                                    <div class="mt-4 grid grid-cols-2 gap-3">
-                                      <label for="small"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="leather == 's'"
-                                        :class="leather == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="leather" id="small" type="radio" name="leather-choice" value="s" class="sr-only" aria-labelledby="leather-choice-0-label">
-                                        <p id="leather-choice-0-label">
-                                          Classic (Steerhide)
-                                        </p>
-                                      </label>
-
-                                      <label for="medium"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="leather == 'm'"
-                                        :class="leather == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="leather" id="medium" type="radio" name="leather-choice" value="m" class="sr-only"
-                                          aria-labelledby="leather-choice-0-label">
-                                        <p id="leather-choice-0-label">
-                                          Premier (Kip Leather)
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Throwing Hand --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{hand: null}">
-                                    <legend>Throwing Hand</legend>
-                                    <div class="mt-4 grid grid-cols-2 gap-3">
-                                      <label for="left"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="hand == 's'"
-                                        :class="hand == 's' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="hand" id="left" type="radio" name="hand-choice" value="s" class="sr-only" aria-labelledby="hand-choice-0-label">
-                                        <p id="hand-choice-0-label">
-                                          Left
-                                        </p>
-                                      </label>
-
-                                      <label for="right"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="hand == 'm'"
-                                        :class="hand == 'm' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="hand" id="right" type="radio" name="hand-choice" value="m" class="sr-only"
-                                          aria-labelledby="hand-choice-0-label">
-                                        <p id="hand-choice-0-label">
-                                          Right
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Sport --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{sport: null}">
-                                    <legend>Sport</legend>
-                                    <div class="mt-4 grid grid-cols-2 gap-3">
-                                      <label for="softball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'softball'"
-                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          Softball
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          Baseball
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Position --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{position: null}">
-                                    <legend>Position</legend>
-                                    <div class="mt-4 grid grid-cols-3 gap-3">
-                                      <label for="softball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="position == 'softball'"
-                                        :class="position == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="position" id="softball" type="radio" name="position-choice" value="softball" class="sr-only" aria-labelledby="position-choice-0-label">
-                                        <p id="position-choice-0-label">
-                                          First Base Mitt
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="position == 'baseball'"
-                                        :class="position == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="position" id="baseball" type="radio" name="position-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="position-choice-0-label">
-                                        <p id="position-choice-0-label">
-                                          Catcher Mitt
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="position == 'baseball'"
-                                        :class="position == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="position" id="baseball" type="radio" name="position-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="position-choice-0-label">
-                                        <p id="position-choice-0-label">
-                                          Infield/Outfield Gloves
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Youth Size --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{sport: null}">
-                                    <legend>Youth Size</legend>
-                                    <div class="mt-4 grid grid-cols-2 gap-3">
-                                      <label for="softball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'softball'"
-                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          Yes
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          No
-                                        </p>
-                                      </label>
-                                    </div>
-                                  </fieldset>
-                            </div>
-
-                            {{-- Size First Base --}}
-                            <div class="relative field-group border p-4 rounded-xl">
-                                <fieldset x-data="{sport: null}">
-                                    <legend>Size First Base</legend>
-                                    <div class="mt-4 grid grid-cols-3 gap-3">
-                                      <label for="softball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'softball'"
-                                        :class="sport == 'softball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="softball" type="radio" name="sport-choice" value="softball" class="sr-only" aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          12.25
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          12.5
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          12.75
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          13
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          13.25
-                                        </p>
-                                      </label>
-
-                                      <label for="baseball"
-                                        class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium sm:flex-1 cursor-pointer focus:outline-none checked:bg-indigo-600 checked:border-transparent checked:text-white checked:hover:bg-indigo-700"
-                                        :aria-checked="sport == 'baseball'"
-                                        :class="sport == 'baseball' ? 'bg-indigo-600 border-transparent text-white hover:bg-indigo-700' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50'">
-                                        <input x-model="sport" id="baseball" type="radio" name="sport-choice" value="baseball" class="sr-only"
-                                          aria-labelledby="sport-choice-0-label">
-                                        <p id="sport-choice-0-label">
-                                          13.5
-                                        </p>
-                                      </label>
+                                    <legend>Belts Size</legend>
+                                    <div class="mt-4">
+                                        <select class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-gray-500 focus:ring-gray-500 disabled:opacity-50 disabled:pointer-events-none">
+                                            <option selected="">Choose an option</option>
+                                            @foreach ($sizes as $size)
+                                                <option value="{{$size}}">{{$size}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                   </fieldset>
                             </div>
@@ -365,7 +127,7 @@
                         {{-- Belt Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Belt Color</h3>
-                            <div class="grid grid-cols-5 gap-3">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('beltcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
@@ -377,7 +139,7 @@
                         {{-- Loop Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Loop Color</h3>
-                            <div class="grid grid-cols-5 gap-3">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('loopcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
@@ -388,7 +150,7 @@
                         {{-- Stich Color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Stich Color</h3>
-                            <div class="grid grid-cols-5 gap-3">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('stichcolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
@@ -399,7 +161,7 @@
                         {{-- Logo color --}}
                         <div class="w-full p-5">
                             <h3 class="border-b mb-3 pb-1">Logo Color</h3>
-                            <div class="grid grid-cols-5 gap-3">
+                            <div class="grid md:grid-cols-10 grid-cols-5 gap-2">
                                 @foreach ($colors as $color)
                                     <button class="flex flex-col cursor-pointer items-center justify-center" x-on:click="$wire.set('logocolor', '{{$color}}')">
                                         <span class="h-12 w-full rounded-lg shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
@@ -408,11 +170,23 @@
                             </div>
                         </div>
 
-                        {{-- Right Starp Custom Text --}}
+                        {{-- Outer Text --}}
                         <div class="w-full p-5">
-                            <h3 class="border-b mb-3 pb-1">Add right starp text</h3>
+                            <h3 class="border-b mb-3 pb-1">Outer Text</h3>
+                            <div class="grid grid-cols-1 items-center gap-6 my-4">
+                                <div class="w-full">
+                                    <h3>Text(7|12)</h3>
+                                    <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="outertext" maxlength="12" minlength="7" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Inside Text --}}
+                        <div class="w-full p-5">
+                            <h3 class="border-b mb-3 pb-1">Add inside text (+$5)</h3>
                             <div class="grid grid-cols-2 items-center gap-6 my-4">
-                                <div>
+                                <div class="flex items-center gap-2">
+                                    <label class="font-bold">Enable</label>
                                     <input type="checkbox" id="hs-basic-usage" class="relative w-[3.25rem] h-7 p-px bg-gray-100 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-blue-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-blue-600 checked:border-blue-600 focus:checked:border-blue-600 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200" wire:model.live='customtextbox'>
                                     <label for="hs-basic-usage" class="sr-only">switch</label>
                                 </div>
@@ -429,7 +203,7 @@
                                         class="flex flex-col cursor-pointer items-center justify-center"
                                         x-on:click="$wire.set('customTextColor', '{{$color}}')"
                                     >
-                                        <span class="md:h-14 h-10 w-full rounded-full shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
+                                        <span class="h-12 w-full rounded-xl shadow-xl border flex items-center justify-center" style="background: {{$color}}"></span>
                                     </button>
                                 @endforeach
                             </div>

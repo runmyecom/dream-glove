@@ -21,11 +21,30 @@ class Custombelt extends Component
         'yellow' => '#ffe947',
     ];
 
+    public $sizes = [
+        '22inch',
+        '24inch',
+        '26inch',
+        '28inch',
+        '30inch',
+        '32inch',
+        '34inch',
+        '36inch',
+        '38inch',
+        '40inch',
+        '42inch',
+        '44inch',
+        '46inch(+$15)',
+        '48inch(+$15)',
+        '50inch(+$15)',
+    ];
+
     public $logocolor = 'transparent';
     public $loopcolor = 'transparent';
     public $beltcolor = 'transparent';
     public $stichcolor = 'transparent';
     public $customtextbox = false;
+    public $outertext = '';
     public $customtext = '';
     public $customTextColor = 'red';
 
