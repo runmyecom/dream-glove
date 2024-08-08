@@ -43,10 +43,15 @@ class Custombelt extends Component
     public $loopcolor = 'transparent';
     public $beltcolor = 'transparent';
     public $stichcolor = 'transparent';
-    public $customtextbox = false;
+
     public $outertext = '';
+    public $outerTextColor = 'red';
+    public $outerTextFont = '';
+
+    public $customtextbox = false;
     public $customtext = '';
     public $customTextColor = 'red';
+    public $customTextFont = '';
 
     public function render()
     {
