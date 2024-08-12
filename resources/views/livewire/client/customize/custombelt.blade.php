@@ -18,6 +18,11 @@
 
             <x-builders.belt.logo class="absolute top-[48%] right-[15.2%] w-[8%]" :color="$logocolor" />
 
+            {{-- Custom Logo --}}
+            @if ($custombrand)
+                <img src="{{ $custombrand->temporaryUrl() }}" class="absolute top-[39%] right-[32%] w-[36px] h-[36px] object-contain rounded-xl">
+            @endif
+
             {{-- Inner Text --}}
             @if ($customtextbox == true)
                 <div class="right-text absolute top-[38%] md:top-[39%] left-[32%] md:left-[34%] w-[28%] object-contain text-center">
@@ -107,6 +112,12 @@
                                         </select>
                                     </div>
                                   </fieldset>
+                            </div>
+
+                            {{-- Custom Logo --}}
+                            <div class="w-full field-group border p-4 rounded-xl">
+                                <h3>Custom Logo</h3>
+                                <input type="file" wire:model="custombrand">
                             </div>
                         </div>
                     </article>

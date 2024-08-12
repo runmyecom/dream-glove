@@ -3,11 +3,17 @@
 namespace App\Livewire\Client\Customize;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Validate;
 
 #[Layout('layouts.app')]
 class Custombelt extends Component
 {
+    use WithFileUploads;
+    #[Validate('image|max:1024')]
+    public $custombrand;
+
     public $colors = [
         'white' => '#ffffff',
         'black' => '#000000',
