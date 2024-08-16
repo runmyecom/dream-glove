@@ -32,7 +32,7 @@
 
             {{-- Outer text --}}
             <div class="right-text absolute md:bottom-[47%] bottom-[46%] left-[6.5%] w-[26%] object-contain rotate-[10deg]">
-                <span class="text-[1.1vh] md:text-[2.5vh] font-bold" style="color: {{$outerTextColor}}; font-family: {{$outerTextFont}}">{{$outertext}}</span>
+                <span class="text-[1.17vh] md:text-[2.6vh] font-bold" style="color: {{$outerTextColor}}; font-family: {{$outerTextFont}}">{{$outertext}}</span>
             </div>
         </figure>
 
@@ -188,9 +188,9 @@
                             <h3 class="border-b mb-3 pb-1">Outer Text</h3>
                             <div class="grid grid-cols-1 items-center gap-6 my-4">
                                 <div class="w-full">
-                                    <h3>Text(7|12)</h3>
+                                    <h3>Text(7|15)</h3>
                                     <div class="flex gap-4 items-center">
-                                        <input type="text" class="w-full p-2 rounded-lg" placeholder="Enter text" wire:model.live="outertext" maxlength="12" minlength="7" />
+                                        <input type="text" class="w-full p-2 rounded-lg" placeholder="Enter text" wire:model.live="outertext" maxlength="15" minlength="7" />
                                         <div class="flex items-center gap-2">
                                             <button
                                                 class="border border-gray-900 rounded-full h-11 w-11 font-bold text-sm"
