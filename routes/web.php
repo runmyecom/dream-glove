@@ -1,16 +1,13 @@
 <?php
 
 use App\Livewire\Client\Cart;
-use App\Livewire\Client\Customize\Custombelt;
-use App\Livewire\Client\Customize\Gloves\Selectweb;
 use App\Livewire\Client\Product;
 use App\Livewire\Client\Checkout;
-use App\Livewire\Client\SingleAccessories;
-use App\Livewire\Client\SingleBelt;
 use App\Livewire\Client\Thankyou;
 use App\Livewire\Client\WishList;
 use App\Livewire\Admin\AdminPanel;
 use App\Livewire\Client\Customize;
+use App\Livewire\Client\SingleBelt;
 use App\Livewire\Client\SingleGuard;
 use App\Livewire\Client\ShoppingCart;
 use Illuminate\Support\Facades\Route;
@@ -21,16 +18,22 @@ use App\Http\Controllers\AdminController;
 use App\Livewire\Client\Customize\Gloves;
 use App\Http\Controllers\StripeController;
 use App\Livewire\Client\ProductByCategory;
+use App\Livewire\Client\SingleAccessories;
 use App\Livewire\Admin\Product\ProductEdit;
 use App\Livewire\Admin\Product\ProductIndex;
 use App\Livewire\Admin\Product\ProductCreate;
+use App\Livewire\Client\Customize\Custombelt;
 use App\Livewire\Admin\Category\CategoryIndex;
 use App\Livewire\Client\Customize\BattingGloves;
+use App\Livewire\Client\Customize\Gloves\Selectweb;
 use App\Livewire\Client\ProductByCategory\Clearance;
 use App\Livewire\Client\ProductByCategory\Accessories;
 use App\Livewire\Client\ProductByCategory\Apparel\Belts;
 use App\Livewire\Client\ProductByCategory\Baseball\Guard;
+use App\Livewire\Client\Customize\BattingGloves\SelectType;
 use App\Livewire\Client\ProductByCategory\Apparel\Clothing;
+use App\Livewire\Client\Customize\BattingGloves\BattingGloveAs;
+use App\Livewire\Client\Customize\BattingGloves\BattingGloveWave;
 use App\Livewire\Client\ProductByCategory\Baseball\Battinggloves\Adult;
 use App\Livewire\Client\ProductByCategory\Baseball\Battinggloves\Youth;
 use App\Livewire\Client\ProductByCategory\Baseball\FieldingGloves\InfieldClassic;
@@ -115,7 +118,11 @@ Route::get('product/{slug}', SingleProduct::class)->name('single-product');
 Route::get('/category/{slug}', ProductByCategory::class)->name('product_by_category');
 
 // Customize
-Route::get('/customize/batting-gloves', BattingGloves::class)->name('customize-batting-gloves');
-Route::get('/customize/gloves/select-web', Selectweb::class)->name('customize-gloves-select-web');
+Route::get('/customize/batting-gloves/types', SelectType::class)->name('customize-batting-gloves-types');
+Route::get('/customize/batting-gloves/as', BattingGloveAs::class)->name('customize-batting-gloves-as');
+Route::get('/customize/batting-gloves/wave', BattingGloveWave::class)->name('customize-batting-gloves-wave');
+
 Route::get('/customize/dream-gloves', Gloves::class)->name('customize-gloves');
+Route::get('/customize/gloves/select-web', Selectweb::class)->name('customize-gloves-select-web');
+
 Route::get('/customize/dream-belts', Custombelt::class)->name('customize-belts');
