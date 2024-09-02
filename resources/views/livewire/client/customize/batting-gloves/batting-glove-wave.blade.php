@@ -22,7 +22,7 @@
             @if ($righttextbox == true)
                 <div class="right-text absolute bottom-[12%] left-[19%] w-[17.2%] object-contain">
                     <x-builders.battinglove.wave.strap class="" :color="$righttextbg" />
-                    <span class="absolute bottom-4 left-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$rightTextColor}}">{{$righttext}}</span>
+                    <span class="absolute bottom-[22%] w-[74px] md:w-[86px] left-0 md:left-[7%] text-[1.5vh] md:text-[2.55vh] text-center font-bold" style="color: {{$rightTextColor}}; font-family: {{$rightTextFont}}">{{$righttext}}</span>
                 </div>
             @endif
 
@@ -30,7 +30,7 @@
             @if ($lefttextbox == true)
                 <div class="right-text absolute bottom-[9.5%] left-[17%] w-[59.7%] object-contain">
                     <x-builders.battinglove.wave.wristband class="" :color="$lefttextbg" />
-                    <span class="absolute bottom-5 right-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
+                    <span class="absolute bottom-3 md:bottom-5 text-center w-[78px] md:w-[105px] right-0 text-[1.7vh] md:text-[2.9vh] font-bold" style="color: {{$leftTextColor}}; font-family: {{$leftTextFont}}">{{$lefttext}}</span>
                 </div>
             @endif
 
@@ -290,8 +290,20 @@
                                     <label for="hs-basic-usage" class="sr-only">switch</label>
                                 </div>
                                 <div class="w-full">
-                                    <h3>Text(7|12)</h3>
-                                    <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="righttext" maxlength="12" minlength="7" />
+                                    <h3>Text(7|9)</h3>
+                                    <div class="flex gap-4 items-center w-full">
+                                        <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="righttext" maxlength="9" minlength="7" />
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="border border-gray-900 rounded-full h-11 w-11 font-bold text-sm"
+                                                x-on:click="$wire.set('rightTextFont', '')"
+                                            >Abc</button>
+                                            <button
+                                                class="border border-gray-900 rounded-full h-11 w-11 font-bold text-sm font-dancing"
+                                                x-on:click="$wire.set('rightTextFont', 'Dancing Script')"
+                                            >Abc</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -317,8 +329,20 @@
                                     <label for="hs-basic-usage" class="sr-only">switch</label>
                                 </div>
                                 <div class="w-full">
-                                    <h3>Text(7|12)</h3>
-                                    <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="lefttext" maxlength="12" minlength="7" />
+                                    <h3>Text(7|9)</h3>
+                                    <div class="flex gap-4 items-center w-full">
+                                        <input type="text" class="w-full p-2" placeholder="Enter text" wire:model.live="lefttext" maxlength="9" minlength="7" />
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="border border-gray-900 rounded-full h-11 w-11 font-bold text-sm"
+                                                x-on:click="$wire.set('leftTextFont', '')"
+                                            >Abc</button>
+                                            <button
+                                                class="border border-gray-900 rounded-full h-11 w-11 font-bold text-sm font-dancing"
+                                                x-on:click="$wire.set('leftTextFont', 'Dancing Script')"
+                                            >Abc</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

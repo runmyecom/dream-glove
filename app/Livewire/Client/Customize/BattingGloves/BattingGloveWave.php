@@ -55,15 +55,17 @@ class BattingGloveWave extends Component
     public $bottomlogocolor = 'transparent';
     public $rightlogocolor = 'transparent';
     public $patches = 'transparent';
-    public $stiching = 'red';
-    public $righttextbox = false;
+    public $stiching = 'transparent';
+    public $righttextbox = true;
     public $righttextbg = 'white';
-    public $righttext = '';
+    public $righttext = 'Vimal Bha';
     public $rightTextColor = 'black';
-    public $lefttextbox = false;
+    public $rightTextFont = '';
+    public $lefttextbox = true;
     public $lefttextbg = 'white';
-    public $lefttext = '';
+    public $lefttext = 'Vimal Bha';
     public $leftTextColor = 'black';
+    public $leftTextFont = '';
 
     public function handleEvent($data){
         foreach($data as $color){

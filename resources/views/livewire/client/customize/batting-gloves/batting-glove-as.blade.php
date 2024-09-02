@@ -22,7 +22,7 @@
             @if ($righttextbox == true)
                 <div class="right-text absolute bottom-[9.6%] left-[16.5%] w-[20.2%] object-contain">
                     <x-builders.battinglove.as.strap class="" :color="$righttextbg" />
-                    <span class="absolute bottom-4 left-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$rightTextColor}}">{{$righttext}}</span>
+                    <span class="absolute bottom-[30%] w-[92px] md:w-[105px] left-[5%] text-center text-[1.5vh] md:text-[2.3vh] font-bold" style="color: {{$rightTextColor}}">{{$righttext}}</span>
                 </div>
             @endif
 
@@ -30,7 +30,7 @@
             @if ($lefttextbox == true)
                 <div class="right-text absolute bottom-[7.1%] left-[15.6%] w-[61%] object-contain">
                     <x-builders.battinglove.as.wristband class="" :color="$lefttextbg" />
-                    <span class="absolute bottom-5 right-4 text-[1.2vh] md:text-[2vh] font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
+                    <span class="absolute bottom-[30%] w-[100px] md:w-[110px] right-0 text-center text-[1.5vh] md:text-[2.3vh] font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
                 </div>
             @endif
 
