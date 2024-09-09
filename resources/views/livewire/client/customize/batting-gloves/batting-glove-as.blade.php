@@ -6,7 +6,7 @@
 
             <x-builders.battinglove.as.palm class="absolute top-[4%] left-[2.8%] w-[96%]" :color="$palmcolor" />
             <x-builders.battinglove.as.leather class="absolute top-[4%] left-[3.2%] h-[70%] object-contain" :color="$leathercolor" />
-            <x-builders.battinglove.as.mesh class="absolute top-[3.5%] left-[0.4%] h-[91%] w-[81%] object-contain" :color="$meshcolor" />
+            <x-builders.battinglove.as.mesh class="absolute top-[3%] left-[8.9%] h-[60vh] w-[89.5%] object-contain" :color="$meshcolor" />
             <x-builders.battinglove.as.binding class="absolute top-[14.7%] left-[10.9%] w-[34%] object-contain" :color="$binding" />
             <x-builders.battinglove.as.wristband class="absolute bottom-[7.1%] left-[15.6%] w-[61%] object-contain" :color="$wristbandcolor" />
             <x-builders.battinglove.as.strap class="absolute bottom-[9.6%] left-[16.5%] w-[20.2%] object-contain" :color="$strap" />

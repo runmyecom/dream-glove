@@ -42,7 +42,7 @@ class BattingGloveAs extends Component
 
     public $palmcolor = 'transparent';
     public $leathercolor = 'transparent';
-    public $meshcolor = 'transparent';
+    public $meshcolor = 'red';
     public $binding = 'transparent';
     public $patches = 'transparent';
     public $logooutline = 'transparent';
