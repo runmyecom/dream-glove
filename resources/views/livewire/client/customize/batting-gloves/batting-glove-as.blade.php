@@ -27,12 +27,12 @@
             @endif
 
             {{-- Left Custom Text --}}
-            @if ($lefttextbox == true)
+            {{-- @if ($lefttextbox == true)
                 <div class="right-text absolute bottom-[7.1%] left-[15.6%] w-[61%] object-contain">
                     <x-builders.battinglove.as.wristband class="" :color="$lefttextbg" />
                     <span class="absolute bottom-[30%] w-[100px] md:w-[110px] right-0 text-center text-[1.5vh] md:text-[2.3vh] font-bold" style="color: {{$leftTextColor}}">{{$lefttext}}</span>
                 </div>
-            @endif
+            @endif --}}
 
         </figure>
       </div>
