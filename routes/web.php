@@ -36,6 +36,7 @@ use App\Livewire\Client\Customize\BattingGloves\BattingGloveAs;
 use App\Livewire\Client\Customize\BattingGloves\BattingGloveWave;
 use App\Livewire\Client\ProductByCategory\Baseball\Battinggloves\Adult;
 use App\Livewire\Client\ProductByCategory\Baseball\Battinggloves\Youth;
+use App\Livewire\Client\ProductByCategory\Baseball\FieldingGloves\Glove12;
 use App\Livewire\Client\ProductByCategory\Baseball\FieldingGloves\InfieldClassic;
 use App\Livewire\Client\ProductByCategory\Baseball\FieldingGloves\InfieldPremier;
 use App\Livewire\Client\ProductByCategory\Baseball\FieldingGloves\OutfieldClassic;
@@ -97,6 +98,7 @@ Route::get('/category/baseball/batting-gloves/youth', Youth::class)->name('baseb
 Route::get('product/baseball/{slug}', SingleBaseball::class)->name('single-baseball');
 
 Route::get('/category/baseball/fielding-gloves/infield/classic', InfieldClassic::class)->name('baseball-fielding-gloves-infield-classic');
+Route::get('/category/baseball/fielding-gloves/infield/classic/glove-12', Glove12::class)->name('baseball-fielding-gloves-infield-classic.glove-12');
 Route::get('/category/baseball/fielding-gloves/infield/premier', InfieldPremier::class)->name('baseball-fielding-gloves-infield-premier');
 Route::get('/category/baseball/fielding-gloves/outfield/classic', OutfieldClassic::class)->name('baseball-fielding-gloves-outfield-classic');
 Route::get('/category/baseball/fielding-gloves/outfield/premier', InfieldPremier::class)->name('baseball-fielding-gloves-outfield-premier');
