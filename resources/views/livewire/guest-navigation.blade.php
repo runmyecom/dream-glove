@@ -90,10 +90,11 @@
             <div class='hidden md:flex items-center gap-2'>
                 <div class='hidden md:flex items-center gap-2'>
                     {{-- Customize --}}
-                    <div x-data="{ customizeMenu: false }">
+                    <div x-data="{ customizeMenu: false }" @mouseleave="customizeMenu = false">
                         <button
-                            class="bg-zinc-800 rounded-xl px-3 py-2 text-white text-sm flex items-center gap-2 font-bold"
+                            class="bg-zinc-800 rounded-xl px-3 py-2 text-white text-xs flex items-center gap-2 font-bold uppercase"
                             x-on:click="customizeMenu = ! customizeMenu"
+                            @mouseover="customizeMenu = true"
                         >
                             <img src="/images/color.png" class="h-6 w-6">
                             Custom Builder
@@ -101,7 +102,7 @@
                         </button>
                         <div class="relative">
                             <div
-                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-1 w-full absolute z-10"
+                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-0 w-full absolute z-10"
                                 x-show="customizeMenu"
                                 x-cloak
                                 @click.away="customizeMenu = false" x-transition:enter="transition ease-out duration-100"
@@ -117,14 +118,15 @@
                     </div>
 
                     {{-- Baseball --}}
-                    <div x-data="{ show: false, battingGloves: false, fieldingGloves: false, infieldChild: false, outfieldChild: false }">
+                    <div x-data="{ show: false, battingGloves: false, fieldingGloves: false, infieldChild: false, outfieldChild: false }" @mouseleave="show = false">
                         <button
-                            class="text-zinc-800 rounded px-3 py-1 text-sm"
+                            class="text-zinc-800 rounded px-3 py-1 text-[13px] font-bold uppercase"
                             x-on:click="show = ! show"
+                            @mouseover="show = true"
                         >Baseball</button>
                         <div class="relative">
                             <div
-                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-1 w-full absolute z-10"
+                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-0 w-full absolute z-10"
                                 x-show="show"
                                 x-cloak
                                 @click.away="show = false" x-transition:enter="transition ease-out duration-100"
@@ -191,17 +193,18 @@
                     </div>
 
                     {{-- Softball --}}
-                    <a href="{{ route('clearance') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'><button class="w-full text-left">Softball</button></a>
+                    <a href="{{ route('clearance') }}" class='text-zinc-800 rounded px-3 py-1 text-[13px] font-bold'><button class="w-full text-left uppercase">Softball</button></a>
 
                     {{-- Apparel --}}
-                    <div x-data="{ apparelMenu: false }">
+                    <div x-data="{ apparelMenu: false }" @mouseleave="apparelMenu = false">
                         <button
-                            class="text-zinc-800 rounded px-3 py-1 text-sm"
+                            class="text-zinc-800 rounded px-3 py-1 text-[13px] font-bold uppercase"
                             x-on:click="apparelMenu = ! apparelMenu"
+                            @mouseover="apparelMenu = true"
                         >Apparel</button>
                         <div class="relative">
                             <div
-                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-1 w-full absolute z-10"
+                                class="bg-white shadow rounded-md p-3 min-w-[220px] top-0 w-full absolute z-10"
                                 x-show="apparelMenu"
                                 x-cloak
                                 @click.away="apparelMenu = false" x-transition:enter="transition ease-out duration-100"
@@ -215,8 +218,8 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('clearance') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'><button class="w-full text-left">Clearance</button></a>
-                    <a href="{{ route('accessories') }}" class='text-zinc-800 rounded px-3 py-1 text-sm'><button class="w-full text-left">Accessories</button></a>
+                    <a href="{{ route('clearance') }}" class='text-zinc-800 rounded px-3 py-1 text-[13px] font-bold'><button class="w-full text-left uppercase">Clearance</button></a>
+                    <a href="{{ route('accessories') }}" class='text-zinc-800 rounded px-3 py-1 text-[13px] font-bold'><button class="w-full text-left uppercase">Accessories</button></a>
                 </div>
             </div>
 

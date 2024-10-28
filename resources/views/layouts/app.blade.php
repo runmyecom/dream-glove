@@ -27,6 +27,7 @@
         </div>
 
         <x-notify />
+
         @livewireScripts
     </body>
 </html>

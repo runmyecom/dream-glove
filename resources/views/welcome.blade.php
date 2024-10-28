@@ -1,8 +1,31 @@
 <x-app-layout>
     <div class="w-full">
-        <a href="{{route('customize-gloves')}}">
+        {{-- <a href="{{route('customize-gloves')}}">
             <img src="/images/hero.jpeg" alt="" class="h-full w-full object-cover">
-        </a>
+        </a> --}}
+        {{-- <div class="hero-area h-[calc(100vh-118px)] w-full overflow-hidden">
+            <div class="h-full grid grid-cols-2 w-full">
+                <div class="relative">
+                    <img src="/images/hero-1.jpg" class="w-full h-[calc(100vh-118px)] object-cover">
+                    <div class="absolute top-0 left-0 h-full bg-gradient-to-r flex items-center justify-center">
+                        <div class="w-[70%]">
+                            <h2 class="text-white text-[5em] font-bold title">Come & See Our Fabulous Gloves?</h2>
+                            <button class="font-semibold border-b-2 hover:border-yellow-500 text-xl px-1 py-2 text-white flex items-center gap-2 group">
+                                Shop Gloves
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 -rotate-45 group-hover:text-yellow-500 group-hover:rotate-0 transition duration-500 ease-in-out" viewBox="0 0 24 24"><path fill="currentColor" d="M16.175 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.712t.3-.713z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full w-full relative">
+                    <img src="/images/hero-2.png" class="w-full h-[calc(100vh-118px)] object-cover">
+                    <img src="/images/gloves.gif" class="w-full h-full absolute top-0 left-0 object-contain heroGlove">
+                </div>
+            </div>
+        </div> --}}
+
+        {{-- Hero Slider --}}
+        <x-slider />
 
         <!-- Featured Products -->
         <section class="p-6 md:p-12">
@@ -150,4 +173,21 @@
 
         <x-footer />
     </div>
+
+    <style>
+        .heroGlove{
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-20px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
 </x-app-layout>
